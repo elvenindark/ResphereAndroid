@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Configuracion" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/editIP"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="direccion ip"
+            android:inputType="textUri" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editPort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="puerto"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGuardarIPPort"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/linearLayout1"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/memoria"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/btnGuardarIPPort"
+        android:text="Memoria" />
+
+</RelativeLayout>

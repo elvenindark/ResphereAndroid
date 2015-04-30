@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtSectorNR"
+                android:layout_span="2"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioGroup
+                    android:id="@+id/radioNR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <RadioButton
+                        android:id="@+id/radio0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="SI" />
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NO" />
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/editObservacionesNR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="OBSERVACIONES: Explique si hay necesidad de evaluación específica"
+                    android:inputType="textMultiLine" >
+
+                    <requestFocus />
+                </EditText>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"                   
+                    android:shrinkColumns="*"
+                    android:stretchColumns="*" >
+
+                    <TableRow
+                        android:id="@+id/tableRow8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/btnGuardarNRF"
+                            android:layout_span="1"
+                            android:text="Guardar" />
+
+                        <Button
+                            android:id="@+id/btnCancelarNR"
+                            android:layout_span="1"
+                            android:text="Cancelar" />
+                    </TableRow>
+                </TableLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>

@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".Inicio" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/spinnerCustom"
+                style="?android:attr/buttonStyleSmall"                
+                android:layout_span="2"
+                android:gravity="left|right"
+                android:text="Seleccione tipo afectacion" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/spinnerCustomNe"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_span="2"
+                android:gravity="left"
+                android:text="Poblacion con necesidades especiales" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ListView
+                android:id="@+id/listTipoPoblacion"
+               	android:layout_span="2"
+                tools:listitem="@android:layout/simple_list_item_1" >
+            </ListView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarPoblaciones"               
+                android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnEnviarPoblaciones"                
+                android:layout_span="1"
+                android:text="Enviar" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

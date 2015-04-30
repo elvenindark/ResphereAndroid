@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".Inicio" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtRespuestaTitle"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="Necesidades más urgentes"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="Albergue"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editHogarNU1"
+                android:layout_span="1"
+                android:ems="5"
+                android:hint="# hogares"
+                android:inputType="number" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/editEspecificacionNU1"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Especificaciones (¿cuántos días?/tipo)"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="Alimentos"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editHogarNU2"
+                android:layout_span="1"
+                android:ems="5"
+                android:hint="# hogares"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editEspecificacionNU2"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Especificaciones (¿cuántos días?/tipo)"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="Agua (Consumo humano)"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editHogarNU3"
+                android:layout_span="1"
+                android:ems="5"
+                android:hint="# hogares"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editEspecificacionNU3"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Especificaciones (¿cuántos días?/tipo)"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarNU"
+                android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnEnviarNU"
+                android:layout_span="2"
+                android:text="Enviar" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

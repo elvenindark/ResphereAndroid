@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Resphere</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Configuracions</string>
+    <string name="image">Image thumbnail</string>
+    <string name="title_activity_inicio_ubicacion">Ubicacion Geografica del Evento</string>
+    <string name="title_activity_principal">Evaluacion Inicial</string>
+    <string name="title_activity_lista_ubicacion">Lista Ubicaciones</string>
+    <string name="menu_configuracion">Configuracion</string>
+    <string name="menu_nuevo">Nueva Ubicacion</string>
+    <string name="menu_poblacion">Poblacion Impactada</string>
+    <string name="menu_principal">Inicio</string>
+    <string name="menu_evento">Fecha Tipo Evento</string>
+    <string name="menu_afectacion">Afectacion Medios de Vida</string>
+    <string name="menu_viviendas">Afectacion Viviendas</string>
+    <string name="title_activity_lista_posicion">Lista Posicion</string>
+    <string name="provincia">Provincia</string>
+    <string name="localidad">Localidad</string>
+    <string name="provincia_prompt">Elija una provincia</string>
+    <string name="localidad_prompt">Elija una localidad</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="message">Ha seleccionado %1$s (%2$s)</string>
+    <string name="title_activity_fecha_evento">Fecha y Tipo de Evento</string>
+    <string name="title_activity_poblacion_impactada">Poblacion Impactada</string>
+    <string name="provincia_mensaje">Seleccione provincia</string>
+
+    <string-array name="salud">
+        <item>Están funcionando unidades operativas de salud?</item>
+        <item>Hay personas que requieren atención médica?</item>
+        <item>Existe agua apta para el consumo humano?</item>
+        <item>Fuentes de agua apta para el consumo humano</item>
+    </string-array>
+    <string-array name="alimentacion">
+        <item>Hay alimentos?</item>
+        <item>Hay perdidas en las cosechas?</item>
+        <item>Hay acceso al mercado?</item>
+        <item>Funciona el mercado?</item>
+        <item>La poblacion cuenta con dinero para comprar?</item>
+        <item>Es posible conservar los alimentos perecibles?</item>
+    </string-array>
+    <string-array name="mediosvida">
+        <item>Agricultura</item>
+        <item>Ganaderia</item>
+        <item>Mineria</item>
+        <item>Pesca</item>
+        <item>Turismo</item>
+        <item>Trabajo en la industria</item>
+        <item>Oficios por cuenta propia</item>
+        <item>Pequeno comercio</item>
+        <item>Trabajo informal</item>
+        <item>Jornalero/a, trabajo eventual</item>
+        <item>Trabajos con asociaciones comunitarias</item>
+        <item>Trabajo con sueldo regular</item>
+        <item>Ayuda de familia/remesa</item>
+        <item>Recibe bono del estado</item>
+        <item>Otras</item>
+    </string-array>
+    <string-array name="servicios">
+        <item>Establecimientos educativos</item>
+        <item>Centros infantiles y gerontologicos</item>
+        <item>Hospitales/centros de salud</item>
+        <item>Centros comunitarios</item>
+        <item>Redes de agua</item>
+        <item>Infraestructura electrica</item>
+        <item>Puentes, vias de acceso</item>
+        <item>Transporte publico</item>
+        <item>Baños, letrinas</item>
+        <item>Alcantarillado</item>
+        <item>Red fija telefonica</item>
+        <item>Telefonia celular</item>
+        <item>Bancos</item>
+        <item>Centros recreativos</item>
+        <item>Iglesias</item>
+        <item>Albergues</item>
+        <item>Otros</item>
+    </string-array>
+    <string-array name="poblacionafectada">
+        <item>Poblacion total del area afectada</item>
+        <item>Afectados</item>
+        <item>Damnificados</item>
+        <item>Evacuados</item>
+        <item>Albergados</item>
+        <item>Heridos</item>
+        <item>Desaparecidos</item>
+        <item>Fallecidos</item>
+    </string-array>
+    <string-array name="poblacionne">
+        <item>Hogares con mujeres como cabeza de familia</item>
+        <item>Hogares con niños como cabeza de familia</item>
+        <item>Mujeres embarazadas/lactante</item>
+        <item>Huérfanos</item>
+        <item>Discapacitados</item>
+        <item>Personas emocionalmente afectadas</item>
+        <item>Personas que sufrieron alguna violencia</item>
+        <item>Especifique si hay etnia dominante</item>
+    </string-array>
+    <string-array name="ayudahumanitaria">
+        <item>Organizaciones Socorro</item>
+        <item>Acciones de Respuesta</item>
+    </string-array>
+    <string-array name="necesidadesrespuesta">
+        <item>Necesidades mas urgentes</item>
+        <item>Necesidades urgentes de recurso humano</item>
+        <item>Necesidades de recuperacion temprana</item>
+    </string-array>
+    <string-array name="afectacionmediosvida">
+        <item>Agricultura</item>
+        <item>Ganaderia</item>
+        <item>Mineria</item>
+        <item>Pesca</item>
+        <item>Turismo</item>
+        <item>Trabajo en la industria</item>
+        <item>Oficios por cuenta propia (albanil, carpintero, etc.)</item>
+        <item>Pequeno comercio</item>
+        <item>Trabajo informal</item>
+        <item>Jornalero/a, trabajo eventual</item>
+        <item>Trabajos con asociaciones comunitarias</item>
+        <item>Trabajo con sueldo regular</item>
+        <item>Ayuda de familia/remesa</item>
+        <item>Recibe bono del estado</item>
+        <item>Otras:</item>
+    </string-array>
+    <string-array name="menuprincipal">
+        <item>Fecha y tipo de evento</item>
+        <item>Ubicación geográfica</item>
+        <item>Población impactada</item>
+        <item>Afectación medios de vida</item>
+        <item>Daños viviendas</item>
+        <item>Daños servicios/infraestructura</item>
+        <item>Accesibilidad</item>
+        <item>Afectación salud/alimentación</item>
+        <item>Situación de ayuda humanitaria</item>
+        <item>Impacto del evento adverso</item>
+        <item>Necesidades mas urgentes</item>
+        <item>Necesidades urgentes de Recurso Humano</item>
+        <item>Necesidades de recuperación temprana</item>
+        <item>Comentarios/Observaciones</item>
+        <item>Equipo de Evaluación</item>
+    </string-array>
+    <string-array name="menuservicios">
+        <item>Establecimientos educativos</item>
+        <item>Centros infantiles y gerontológicos</item>
+        <item>Hospitales/Centros de salud</item>
+        <item>Centros comunitarios</item>
+        <item>Redes de Agua</item>
+        <item>Infraestructura eléctrica</item>
+        <item>Puentes, vías de acceso</item>
+        <item>Transporte público</item>
+        <item>Baños/letrinas</item>
+        <item>Alcantarillado</item>
+        <item>Red fija telefónica</item>
+        <item>Telefonía celular</item>
+        <item>Bancos</item>
+        <item>Centros recreativos</item>
+        <item>Iglesias</item>
+        <item>Albergues</item>
+        <item>Otros:</item>
+    </string-array>
+    <string-array name="menusalud">
+        <item>Salud</item>
+        <item>Alimentación</item>
+    </string-array>
+    <string-array name="eventos">
+        <item>sismo</item>
+        <item>deslave</item>
+        <item>inundacion</item>
+        <item>deslizamiento</item>
+        <item>tsunami</item>
+        <item>aluvión</item>
+        <item>actividad volcanica</item>
+        <item>vendaval</item>
+        <item>incendio estructural</item>
+        <item>sequia</item>
+        <item>colapso estructural</item>
+        <item>otros</item>
+    </string-array>
+    <string-array name="menuInicioTitles">
+        <item>Evaluación Inicial</item>
+        <item>Revisar informes</item>
+        <item>Respuesta Humanitaria</item>
+        <item>Monitoreo Respuesta</item>
+        <item>Configuración</item>
+    </string-array>
+    <string-array name="menuInicioSubtitles">
+        <item>Nuevo informe de evaluación inicial</item>
+        <item>Revisar informes de evaluación</item>
+        <item>Indicadores normas mínimas respuesta humanitaria</item>
+        <item>Monitoreo indicadores respuesta humanitaria</item>
+        <item>Datos de conexión, configuración inicial</item>
+    </string-array>
+    <string-array name="nivelImpacto">
+        <item>Nivel 1. Evento puede ser atendido con los recursos locales (parroquiales o cantonales) disponibles para emergencias.</item>
+        <item>Nivel 2. Evento requiere movilizar recursos locales adicionales (parroquiales o cantonales) a los dispuestos para emergencias. El COE parroquial o cantonal está tomando decisiones.</item>
+        <item>Nivel 3. Evento ha superado capacidades locales y requiere apoyo provincial. Se requiere activación del COE provincial y la intervención directa de la SGR a través de la DPGR.</item>
+        <item>Nivel 4. Evento ha superado capacidades provinciales y requiere apoyo nacional. Se requiere activación del COE Nacional y la intervención directa de la SGR.</item>
+    </string-array>
+    <string-array name="recuperacionTemprana">
+        <item>Agricultura</item>
+        <item>Ganadería</item>
+        <item>Pesca</item>
+        <item>Comercio</item>
+        <item>Industria</item>
+        <item>Medio ambiente</item>
+        <item>Educación</item>
+        <item>Salud</item>
+        <item>Vivienda</item>
+        <item>Agua potable</item>
+        <item>Energía eléctrica</item>
+        <item>Vías de acceso</item>
+        <item>Transporte público</item>
+        <item>Oleoducto/gasoducto</item>
+        <item>Saneamiento/alcantarillado</item>
+        <item>Telecomunicaciones</item>
+        <item>Otros:</item>
+    </string-array>
+
+    <string name="title_activity_edit_poblacion_impactada">Edit Poblacion Impactada</string>
+    <string name="title_activity_poblacion_ne">Poblacion Necesidades Especiales</string>
+    <string name="title_activity_afectacion_medios_vida">Afectacion Medios Vida</string>
+    <string name="title_activity_edit_afectacion_medios">Edit Afectacion Medios</string>
+    <string name="title_activity_afectacion_viviendas">Daños en Viviendas</string>
+    <string name="title_activity_afectacion_servicios">Daños en servicios y otras infraestructuras</string>
+    <string name="title_activity_edit_afectacion_servicios">Edit Afectacion Servicios</string>
+    <string name="title_activity_afectacion_accesabilidad">Accesabilidad</string>
+    <string name="title_activity_afectacion_salud">Afectacion Salud y Alimentacion</string>
+    <string name="title_activity_edit_afectacion_salud">Edit Afectacion Salud y Alimentacion</string>
+    <string name="title_activity_edit_afectacion_alimentacion">Edit Afectacion Seguridad Alimentaria</string>
+    <string name="title_activity_ayuda_humanitaria">Situación de Ayuda Humanitaria</string>
+    <string name="title_activity_edit_organizaciones_socorro">Organizaciones de Socorro</string>
+    <string name="title_activity_edit_acciones_respuesta">Acciones Respuesta</string>
+    <string name="title_activity_impacto_evento">Impacto Evento Adverso</string>
+    <string name="title_activity_necesidades_respuesta">Necesidades de Respuesta</string>
+    <string name="title_activity_necesidades_rrhh">Necesidades Recursos Humanos</string>
+    <string name="title_activity_necesidades_recuperacion">Necesidades Recuperacion</string>
+    <string name="title_activity_necesidades">Necesidades</string>
+    <string name="title_activity_comentarios">Comentarios</string>
+    <string name="title_activity_equipo_evaluacion">Equipo Evaluacion</string>
+    <string name="title_activity_configuracion">Configuracion</string>
+    <string name="title_activity_inicio">Evaluación Inicial y Respuesta Temprana</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_menu_principal">Evaluación Inicial</string>
+    <string name="txtTipoParroquia">Tipo Parroquia</string>
+    <string name="txtSpinnerAHO">Organizaciones de Socorro/Desarrollo que están funcionando en la comunidad</string>
+    <string name="txtSpinnerAHR">Acciones de Respuesta realizadas hasta el momento</string>
+    <string name="title_activity_estado_evaluacion">Consulta Evaluaciones</string>
+
+    <string-array name="eventoDemos">
+        <item>Evento 1; Lugar; Fecha; Estado</item>
+        <item>Evento 2; Lugar; Fecha; Estado</item>
+        <item>Evento 3; Lugar; Fecha; Estado</item>
+        <item>Evento 4; Lugar; Fecha; Estado</item>
+    </string-array>
+
+    <string name="title_activity_respuesta_humanitaria">Respuesta Humanitaria</string>
+
+    <string-array name="RespuestaHumanitaria">
+        <item>Normas Agua</item>
+        <item>Normas Alimentación</item>
+        <item>Normas Alojamiento</item>
+        <item>Normas Salud</item>
+    </string-array>
+    <string-array name="RespuestaAgua">
+        <item>Norma humanitaria 1; indicador de cumplimiento 1</item>
+        <item>Norma humanitaria n-1; indicador de cumplimiento m-1</item>
+        <item>Norma humanitaria n; indicador de cumplimiento m</item>
+    </string-array>
+
+    <string name="title_activity_monitoreo_respuesta">Monitoreo Respuesta Humanitaria</string>
+
+    <string-array name="MonitoreoRespuesta">
+        <item>Monitoreo R. Agua</item>
+        <item>Monitoreo R. Alimentación</item>
+        <item>Monitoreo R. Alojamiento</item>
+        <item>Monitoreo R. Salud</item>
+    </string-array>
+
+    <string name="title_activity_monitoreo_respuesta_agua">Monitoreo Respuesta Agua</string>
+    <string name="btn_Actualizar">Actualizar</string>
+    <string name="btn_Enviar">Enviar</string>
+    <string name="title_activity_lista_eventos">Estado de eventos</string>
+    <string name="error_empty_name">El campo está vacío</string>
+    <string name="errors">Estos campos tienen errores</string>
+    <string name="btn_enviar">Enviar</string>
+
+    <string-array name="RespuestaHumanitariaDescriptions">
+        <item>Abastecimiento de agua, saneamiento y promoción de la higiene</item>
+        <item>Seguridad alimentaria y nutrición</item>
+        <item>Alojamiento, asentamientos humanos y artículos no alimentarios</item>
+        <item>Acción de salud</item>
+    </string-array>
+    
+    <string-array name="MonitoreoRespuestaDescriptions">
+        <item>Monitoreo de respuesta Abastecimiento de agua, saneamiento y promoción de la higiene</item>
+        <item>Monitoreo de respuesta Seguridad alimentaria y nutrición</item>
+        <item>Monitoreo de respuesta Alojamiento, asentamientos humanos y artículos no alimentarios</item>
+        <item>Monitoreo de respuesta Acción de salud</item>
+    </string-array>
+
+    <string name="title_activity_respuesta">RespuestaActivity</string>
+    <string name="title_activity_respuesta_detalle">Respuesta Humanitaria</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

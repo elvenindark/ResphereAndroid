@@ -1,0 +1,241 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="false" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".InformacionGeneral" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+		    <TableRow
+		        android:id="@+id/tableRow3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+		        <Spinner
+		            android:id="@+id/spinnerProvincia"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:prompt="@string/provincia_mensaje" />
+
+		        <Spinner
+		            android:id="@+id/spinnerCanton"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content" />
+
+		    </TableRow>
+
+		    <TableRow
+		        android:id="@+id/tableRow4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+		        <TextView
+		            android:id="@+id/textTipoParroquia"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:gravity="center"
+		            android:hint="Tipo Parroquia"
+		            android:text="@string/txtTipoParroquia"
+		            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		        <Spinner
+		            android:id="@+id/spinnerParroquia"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1" />
+
+		    </TableRow>
+		    
+		    <TableRow
+		        android:id="@+id/tableRow5"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+		        <EditText
+		            android:id="@+id/txtSector"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:ems="10"
+		            android:hint="Sector/direccion"
+		            android:inputType="textPostalAddress"
+		            android:nextFocusDown="@+id/radioGroupTipo"
+		            android:singleLine="true" />
+
+		    </TableRow>
+
+		    <TableRow
+		        android:id="@+id/tableRow1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+		        <TextView
+		            android:id="@+id/txtRespuestaTitle"
+		            android:text="Punto de referencia"
+		            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		    </TableRow>
+		    
+		     <TableRow
+		         android:id="@+id/tableRow7"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content" >
+
+		         <EditText
+		             android:id="@+id/txtDistancia"
+		             android:layout_weight="1"
+		             android:ems="10"
+		             android:hint="Distancia Km"
+		             android:inputType="numberDecimal"
+		             android:nextFocusDown="@+id/txtTiempo"
+		             android:singleLine="true" />
+
+		         <EditText
+		             android:id="@+id/txtTiempo"
+		             android:layout_width="wrap_content"
+		             android:ems="10"
+		             android:hint="Tiempo Minutos"
+		             android:inputType="number"
+		             android:nextFocusDown="@+id/txtReferencia"
+		             android:singleLine="true" />
+
+		     </TableRow>
+		    
+		      <TableRow
+		        android:id="@+id/tableRow8"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+		          <EditText
+		              android:id="@+id/txtReferencia"
+		              android:layout_width="wrap_content"
+		              android:layout_height="wrap_content"
+		              android:layout_weight="2"
+		              android:ems="10"
+		              android:hint="Punto Referencia"
+		              android:inputType="text"
+		              android:nextFocusDown="@+id/txtX"
+		              android:singleLine="true" />
+
+		    </TableRow>
+ 			
+ 			<TableRow
+		        android:id="@+id/tableRow9"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+ 				<TextView
+ 				    android:id="@+id/textView8"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:text="Coordenadas"
+ 				    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+ 				<Button
+ 				    android:id="@+id/btnGPS"
+ 				    style="?android:attr/buttonStyleSmall"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:text="GPS" />
+  
+			</TableRow>
+			
+ 			<TableRow
+		        android:id="@+id/tableRow10"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+ 				<EditText
+ 				    android:id="@+id/txtX"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:ems="10"
+ 				    android:hint="Longitud"
+ 				    android:nextFocusDown="@+id/txtY"
+ 				    android:inputType="numberDecimal|numberSigned" />
+
+ 				<EditText
+ 				    android:id="@+id/txtY"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:ems="10"
+ 				    android:hint="Latitud"
+ 				    android:nextFocusDown="@+id/txtAltitud"
+ 				    android:inputType="numberDecimal|numberSigned" />
+  
+			</TableRow>
+			
+ 			<TableRow
+		        android:id="@+id/tableRow12"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+ 				<EditText
+ 				    android:id="@+id/txtAltitud"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:ems="10"
+ 				    android:hint="Altitud"
+ 				    android:inputType="numberDecimal" />
+  
+			</TableRow>
+			
+ 			<TableRow
+		        android:id="@+id/tableRow13"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+
+ 				<Button
+ 				    android:id="@+id/btnGuardar"
+ 				    android:layout_width="match_parent"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:text="Guardar" />
+
+ 				<Button
+ 				    android:id="@+id/btnEnviar"
+ 				    android:layout_width="match_parent"
+ 				    android:layout_height="wrap_content"
+ 				    android:layout_weight="1"
+ 				    android:text="Enviar" />
+  
+			</TableRow>
+
+ 			<TableRow
+ 			    android:id="@+id/tableRow2"
+ 			    android:layout_width="wrap_content"
+ 			    android:layout_height="wrap_content" >
+
+ 				<Button
+ 				    android:id="@+id/btnActualizarUbicacion"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:text="@string/btn_Actualizar" />
+
+ 				<Button
+ 				    android:id="@+id/btnEnviarUbicacion"
+ 				    android:layout_width="wrap_content"
+ 				    android:layout_height="wrap_content"
+ 				    android:text="@string/btn_Enviar" />
+
+ 			</TableRow>
+		
+		</TableLayout>
+
+	</LinearLayout>
+</ScrollView>

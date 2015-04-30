@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textTituloSA"
+                android:layout_span="2"
+                android:hint="Seguridad alimentaria"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/radioGroupSA"
+                android:layout_span="2"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NO" />
+            </RadioGroup>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editPorcentajeSA"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="%"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editObservacionSA"
+                android:layout_span="1"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarSA"
+                android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnCancelarSA"
+                android:layout_span="1"
+                android:text="Cancelar" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

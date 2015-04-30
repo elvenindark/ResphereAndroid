@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtRespuestaTitle"
+            android:layout_span="2"
+            android:gravity="center"
+            android:text="Medios de Vida Afectados"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/editHombresMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="# hombres"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editMujeresMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="#mujeres"
+            android:inputType="number" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+id/radioGroupMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radioSin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Sin daño" />
+
+            <RadioButton
+                android:id="@+id/radioParcial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daño parcial" />
+
+            <RadioButton
+                android:id="@+id/radioTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daño total" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/chkAplicaMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aplica" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/editObservacionesMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:ems="10"
+            android:hint="Observaciones"
+            android:inputType="textMultiLine" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnGuardarMV"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Guardar" />
+
+        <Button
+            android:id="@+id/btnCancelarMV"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Cancelar" />
+
+    </TableRow>
+
+</TableLayout>

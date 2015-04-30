@@ -1,0 +1,135 @@
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".InformacionGeneral" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+            android:shrinkColumns="*"
+        	android:stretchColumns="*">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_height="wrap_content" 
+                android:layout_width="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/textFechaEq"
+                    android:layout_span="1"
+                    android:gravity="center"
+                    android:hint="Fecha de la Evaluación" />
+
+                <Button
+                    android:id="@+id/btnFechaEq"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_span="1"
+                    android:text="Fecha" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_gravity="center"
+                    android:layout_span="1"
+                    android:gravity="center"
+                    android:text="Equipo"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/btnEquipoEq"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_span="1"
+                    android:text="Agregar" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ListView
+                    android:id="@+id/listEquipo"
+                    android:layout_span="2" >
+                </ListView>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_span="1"
+                    android:gravity="center"
+                    android:text="Entrevistados"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/btnEntrevistadoEq"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_span="1"
+                    android:text="Agregar" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ListView
+                    android:id="@+id/listEntrevistado"
+                    android:layout_span="2" >
+                </ListView>
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" 
+            android:shrinkColumns="*"
+        	android:stretchColumns="*">
+
+            <TableRow
+                android:id="@+id/tableRow11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnGuardarEq"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_span="1"
+                    android:text="Guardar" />
+
+                <Button
+                    android:id="@+id/btnEnviarEq"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_span="1"
+                    android:text="Enviar" />
+            </TableRow>
+        </TableLayout>
+
+	</LinearLayout>

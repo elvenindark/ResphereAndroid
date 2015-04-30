@@ -1,0 +1,106 @@
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".InformacionGeneral" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:shrinkColumns="*"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_span="2"
+                    android:text="Especifique el medio y tipo mas adecuado para llegar a la zona afectada"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/chkAccesoTerrestre"
+                    android:layout_span="2"
+                    android:text="Vía terrestre" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/chkAccesoAereo"
+                    android:layout_span="2"
+                    android:text="Vía aérea" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <CheckBox
+                    android:id="@+id/chkAccesoFluvial"
+                    android:layout_span="2"
+                    android:text="Vía fluvial" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_span="2"
+                    android:text="Especifique tipo de transporte"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/txtTipoTransporte"
+                    android:layout_span="2"
+                    android:ems="10"
+                    android:inputType="textMultiLine" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnGuardarAcceso"
+                    android:layout_span="1"
+                    android:text="Guardar" />
+
+                <Button
+                    android:id="@+id/btnEnviarAcceso"
+                    android:layout_span="1"
+                    android:text="Enviar" />
+            </TableRow>
+
+        </TableLayout>
+
+	</LinearLayout>

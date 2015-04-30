@@ -1,0 +1,71 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".InformacionGeneral" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:stretchColumns="*"
+            android:shrinkColumns="1" >
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_span="2"
+                    android:text="Comentarios/Observaciones"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+               
+                <EditText
+                    android:id="@+id/editComentario"
+                    android:layout_span="2"
+                    android:ems="10"
+                    android:hint="observaciones/cuantificar"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:singleLine="false" >
+                    
+                </EditText> 
+
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tableRow11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <Button
+                    android:id="@+id/btnGuardarCom"
+                    android:layout_span="1"
+                    android:text="Guardar" />
+
+                <Button
+                    android:id="@+id/btnEnviarCom"
+                    android:layout_span="1"
+                    android:text="Enviar" />
+
+            </TableRow>
+        </TableLayout>
+
+	</LinearLayout>
+</ScrollView>

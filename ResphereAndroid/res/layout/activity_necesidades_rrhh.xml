@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".Inicio" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtRespuestaTitle"
+                android:layout_span="2"
+                android:text="Necesidades urgentes de Recursos Humanos"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/checkBusquedaNRH"
+                android:layout_span="1"
+                android:text="Búsqueda y rescate"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/editBusquedaNRH"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Requerimientos y equipos"
+                android:inputType="textMultiLine" >
+                
+            	<requestFocus />    
+            </EditText>
+                        
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/checkSaludNRH"
+                android:layout_span="1"
+                android:text="Salud física y mental"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/editSaludNRH"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Requerimientos y equipos"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/checkSeguridadNRH"
+                android:layout_span="1"
+                android:text="Seguridad"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/editSeguridadNRH"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Requerimientos y equipos"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/checkIngNRH"
+                android:layout_span="1"
+                android:text="Ingeniería y mantenim..."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/editIngNRH"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Requerimientos y equipos"
+                android:inputType="textMultiLine" >
+                
+            </EditText>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarNRH"
+                android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnEnviarNRH"
+                android:layout_span="2"
+                android:text="Enviar" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+    	android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtRespuestaTitle"
+                android:layout_span="2"
+                android:text="Acciones de Respuesta realizadas hasta el momento"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textFechaAccion"
+                android:layout_span="1"
+                android:hint="Fecha"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/btnFechaAccion"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_span="1"
+                android:text="Fecha" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editDescripcionAccion"
+                android:layout_span="2"
+                android:ems="10"
+                android:hint="Descripción"
+                android:inputType="textMultiLine" >
+
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editOrganizacionAccion"
+                android:layout_span="2"
+                android:ems="10"
+                android:hint="Organización/Institución" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editHogaresAccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="# Hogares beneficiados"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editPersonasAccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="# Personas beneficiadas"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarAccionF"
+                android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnCancelarAccion"
+                android:layout_span="1"
+                android:text="Cancelar" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

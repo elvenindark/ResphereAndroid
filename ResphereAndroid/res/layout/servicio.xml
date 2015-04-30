@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/txtRespuestaTitle"
+            android:layout_span="2"
+            android:gravity="center"
+            android:text="Daños en servicios e infraestructuras"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/chksifuncionaservicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Funciona" />
+
+            <CheckBox
+                android:id="@+id/chksiaplicaservicios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aplica" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroupServicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="1"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radioSin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Sin daño" />
+
+            <RadioButton
+                android:id="@+id/radioParcial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daño parcial" />
+
+            <RadioButton
+                android:id="@+id/radioTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daño total" />
+        </RadioGroup>
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/txtObservacionServicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:ems="10"
+            android:hint="Observaciones"
+            android:inputType="textMultiLine" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnGuardarServiciosF"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Guardar" />
+
+        <Button
+            android:id="@+id/btnCancelarServiciosF"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Cancelar" />
+
+    </TableRow>
+
+</TableLayout>

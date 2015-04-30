@@ -1,0 +1,99 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/nombreEE"
+                android:layout_span="2"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="textPersonName" >
+
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/organizacionEE"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Organizacion" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupEE"
+                android:layout_span="1"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"                    
+                    android:text="M" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:text="F" />
+            </RadioGroup>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/telefonoEE"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="Telefono"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/emailEE"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="email"
+                android:inputType="textEmailAddress" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarContacto"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnCancelarContacto"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>

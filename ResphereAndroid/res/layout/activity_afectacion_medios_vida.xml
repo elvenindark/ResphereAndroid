@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".Inicio" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/spinnerCustomMV"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_span="2"
+                android:gravity="left|right"
+                android:text="Seleccione tipo afectacion" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ListView
+                android:id="@+id/listMediosVida"
+                android:layout_span="2"
+                tools:listitem="@android:layout/simple_list_item_1" >
+            </ListView>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarMediosV"                
+                android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnEnviarMediosV"
+                android:layout_span="1"
+                android:text="Enviar" />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

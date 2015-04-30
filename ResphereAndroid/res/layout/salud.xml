@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textTitleSalud"
+                android:layout_span="2"
+                android:hint="Afectación a la salud y la nutrición"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/radioSalud"
+                android:layout_span="2"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:checked="true"                    
+                    android:text="SI" />
+
+                <RadioButton
+                    android:id="@+id/radio1"                    
+                    android:text="NO" />
+
+                <requestFocus />
+            </RadioGroup>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editObservacionSalud"
+                android:layout_span="2"
+                android:ems="10"
+                android:hint="Observaciones/cuantificar"
+                android:inputType="textMultiLine" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnGuardarSaludF"
+              	android:layout_span="1"
+                android:text="Guardar" />
+
+            <Button
+                android:id="@+id/btnCancelarSaludF"
+               	android:layout_span="1"
+                android:text="Cancelar" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
