@@ -54,15 +54,15 @@ OnSendListener, ValidationListener, AsynRespuesta{
 	private ListView listview;
 	private ArrayAdapter<String> adapter;
 	@Required(order = 3, message = "No es una descripcion valida")
-	@TextRule(order =4, minLength = 3, maxLength = 40, message = "Introduce entre 6 a 40 caracteres")
+	@TextRule(order =4, minLength = 3, maxLength = 100, message = "Introduce entre 6 a 100 caracteres")
 	@ItemWidget(className = EditText.class, identifier = R.id.editDescEvento)
 	private EditText descripcion;
 	@Required(order = 5, message = "No es un efecto valido")
-	@TextRule(order =6, minLength = 3, maxLength = 40, message = "Introduce entre 6 a 40 caracteres")
+	@TextRule(order =6, minLength = 3, maxLength = 100, message = "Introduce entre 6 a 100 caracteres")
 	@ItemWidget(className = EditText.class, identifier = R.id.editEfecSecundarios)
 	private EditText efectos;
 	@Required(order = 7, message = "No es una amenaza valida")
-	@TextRule(order =8, minLength = 3, maxLength = 40, message = "Introduce entre 6 a 40 caracteres")
+	@TextRule(order =8, minLength = 3, maxLength = 100, message = "Introduce entre 6 a 100 caracteres")
 	@ItemWidget(className = EditText.class, identifier = R.id.editAmenazas)
 	private EditText amenazas;
 	private Evento evento;

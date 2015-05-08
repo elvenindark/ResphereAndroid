@@ -301,5 +301,9 @@
     <string name="title_activity_respuesta">RespuestaActivity</string>
     <string name="title_activity_respuesta_detalle">Respuesta Humanitaria</string>
     <string name="action_settings">Settings</string>
+    <string name="Guardar">Se ha guardado éxitosamente</string>
+    <string name="Enviar">Se ha enviado éxitosamente</string>
+    <string name="NoGuardar">No se ha guardado correctamente</string>
+    <string name="NoEnviar">No se ha enviado correctamente</string>
 
 </resources>

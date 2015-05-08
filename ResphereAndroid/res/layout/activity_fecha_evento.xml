@@ -87,48 +87,37 @@
 		        <EditText
 		            android:id="@+id/editDescEvento"
 		            android:layout_span="2"
+		             android:lines="2"
 		            android:ems="10"
 		            android:hint="Descripcion del Evento Adverso"
-		            android:inputType="textMultiLine"
-		             >
-
-		            <requestFocus />
-		          
-		        </EditText>
-		         
-		     </TableRow>	
-		     
+		            android:inputType="textMultiLine">		            <requestFocus />		          
+		        </EditText>		         
+		     </TableRow>			     
 		      <TableRow
-		         android:id="@+id/tableRow9"
+		         android:id="@+id/tableRow10"
 		         android:layout_width="wrap_content"
 		         android:layout_height="wrap_content" >
-
 		        <EditText
 		            android:id="@+id/editEfecSecundarios"
 		            android:layout_span="2"
+		             android:lines="2"
 		            android:ems="10"
 		            android:hint="Efectos Secundarios"
-		            android:inputType="textMultiLine"
-		            >
-		          
-		        </EditText>
-		         
-		     </TableRow>
-		     
+		            android:inputType="textMultiLine">		          
+		        </EditText>		         
+		     </TableRow>		     
 		       <TableRow
 		         android:id="@+id/tableRow11"
 		         android:layout_width="wrap_content"
 		         android:layout_height="wrap_content" >
-
 		        <EditText
 		            android:id="@+id/editAmenazas"
 		            android:layout_span="2"
+		             android:lines="2"
 		            android:ems="10"
 		            android:hint="Posibles Amenazas en un futuro cercano"
-		            android:inputType="textMultiLine" >
-		          
-		        </EditText>
-		         
+		            android:inputType="textMultiLine" >		          
+		        </EditText>		         
 		     </TableRow>
 		      		
 			
