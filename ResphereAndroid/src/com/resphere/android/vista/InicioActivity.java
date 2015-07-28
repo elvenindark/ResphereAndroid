@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.resphere.android.util.ConfiguracionPreferencias;
+import com.resphere.android.util.Preferencias;
 import com.resphere.android.vista.adapter.CustomList;
 import com.resphere.android.vista.adapter.FilaItem;
 import com.resphere.android.vista.evolucion.ListaEventos;
@@ -30,12 +31,15 @@ public class InicioActivity extends Activity {
     String identificador;
     
     private ConfiguracionPreferencias preferencias;
+    private Preferencias pref;
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_inicio);
 		preferencias = new ConfiguracionPreferencias(this);
+		pref = new Preferencias();
+		pref.init(this);
 		titles = getResources().getStringArray(R.array.menuInicioTitles);	
 		descriptions = getResources().getStringArray(R.array.menuInicioSubtitles);	
 		preferencias = new ConfiguracionPreferencias(this);
@@ -52,6 +56,7 @@ public class InicioActivity extends Activity {
                     		if(preferencias.isDBPref()){
                     			identificador = String.valueOf(System.currentTimeMillis()/1000);
                     			preferencias.setEventoPref("nuevo");
+                    			pref.setNuevo(true);
 	                    		Intent intent1 = new Intent(InicioActivity.this, PrincipalActivity.class);
 	                     		intent1.putExtra("identificador", identificador);             		 
 	                     		startActivity(intent1);
@@ -63,6 +68,7 @@ public class InicioActivity extends Activity {
                     	case 1:
                     		if(preferencias.isDBPref()){                    			
                     			preferencias.setEventoPref("actual");
+                    			pref.setNuevo(false);
 	                    		Intent intent1 = new Intent(InicioActivity.this, ListaEventos.class);	                     		             		 
 	                     		startActivity(intent1);
                      		}

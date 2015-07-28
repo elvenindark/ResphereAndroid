@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.resphere.android.util.ConfiguracionPreferencias;
+import com.resphere.android.util.Preferencias;
 import com.resphere.android.vista.adapter.ExpandableListAdapter;
 
 public class PrincipalActivity extends Activity {
@@ -35,6 +36,7 @@ public class PrincipalActivity extends Activity {
 	private String identificador;
 	
 	private ConfiguracionPreferencias preferencias;
+	protected Preferencias pref;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class PrincipalActivity extends Activity {
 		} 
 		
 		preferencias = new ConfiguracionPreferencias(this);
+		pref = new Preferencias();
+		pref.init(this);
 		// get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
         
@@ -108,7 +112,7 @@ public class PrincipalActivity extends Activity {
              		startActivity(intent0);             		
              		break;
              	case 1:
-             		if(preferencias.isNewEventoPref()){
+             		if(/*preferencias.isNewEventoPref() pref.getEvento()*/ pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent1 = new Intent(PrincipalActivity.this, UbicacionActivity.class);
@@ -118,7 +122,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 10:
-             		if(preferencias.isNewEventoPref()){
+             		if(/*preferencias.isNewEventoPref()*/pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent2 = new Intent(PrincipalActivity.this, AfectacionPoblacionActivity.class);
@@ -128,7 +132,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 11:
-             		if(preferencias.isNewEventoPref()){
+             		if(/*preferencias.isNewEventoPref()*/ pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent3 = new Intent(PrincipalActivity.this, AfectacionMediosVidaActivity.class);
@@ -138,7 +142,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 12:
-             		if(preferencias.isNewEventoPref()){
+             		if(/*preferencias.isNewEventoPref()*/pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent4 = new Intent(PrincipalActivity.this, AfectacionViviendasActitivity.class);
@@ -148,7 +152,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 20:
-             		if(preferencias.isNewEventoPref()){
+             		if(/*preferencias.isNewEventoPref()*/pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent5 = new Intent(PrincipalActivity.this, AfectacionServiciosActivity.class);
@@ -158,7 +162,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 21:
-             		if(preferencias.isNewEventoPref()){
+             		if(/*preferencias.isNewEventoPref()*/pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent6 = new Intent(PrincipalActivity.this, AfectacionAccesabilidadActivity.class);

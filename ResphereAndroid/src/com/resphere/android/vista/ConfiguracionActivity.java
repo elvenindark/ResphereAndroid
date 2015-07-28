@@ -73,6 +73,7 @@ public class ConfiguracionActivity extends Activity {
 				if(!ip.getText().equals("") && !port.getText().equals("")){
 					preferencias.setIpPuertoPref(ip.getText().toString(), port.getText().toString());
 					pref.setHost(ip.getText().toString());
+					pref.setPort(port.getText().toString());
 					pref.setFirstUse();
 					Toast.makeText(getApplicationContext(), "IP y Puerto guardados correctamente", Toast.LENGTH_SHORT).show();
 				}else{

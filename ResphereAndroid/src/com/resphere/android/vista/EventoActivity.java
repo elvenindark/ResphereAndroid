@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,6 +36,7 @@ import com.resphere.android.util.Comunicacion;
 import com.resphere.android.util.ConfiguracionPreferencias;
 import com.resphere.android.util.ItemWidget;
 import com.resphere.android.util.Posicion;
+import com.resphere.android.util.Preferencias;
 import com.resphere.android.vista.fragment.EventoListFragment;
 import com.resphere.android.vista.fragment.EventoListFragment.ListEventoListener;
 import com.resphere.android.vista.fragment.FechaPickerFragment;
@@ -47,23 +49,11 @@ OnSendListener, ValidationListener, AsynRespuesta{
 	private Button botonEventos;
 	private Button botonGuardar;
 	private Button botonEnviar;
-	@Required(order = 1, message = "No es fecha u hora valida")
-	@TextRule(order =2, minLength = 3, maxLength = 20, message = "Use el control")
-	@ItemWidget(className = EditText.class, identifier = R.id.editFechaEvento)
 	private EditText fechaTxt;
 	private ListView listview;
 	private ArrayAdapter<String> adapter;
-	@Required(order = 3, message = "No es una descripcion valida")
-	@TextRule(order =4, minLength = 3, maxLength = 100, message = "Introduce entre 6 a 100 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.editDescEvento)
 	private EditText descripcion;
-	@Required(order = 5, message = "No es un efecto valido")
-	@TextRule(order =6, minLength = 3, maxLength = 100, message = "Introduce entre 6 a 100 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.editEfecSecundarios)
 	private EditText efectos;
-	@Required(order = 7, message = "No es una amenaza valida")
-	@TextRule(order =8, minLength = 3, maxLength = 100, message = "Introduce entre 6 a 100 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.editAmenazas)
 	private EditText amenazas;
 	private Evento evento;
 	public Validator validator;
@@ -74,10 +64,10 @@ OnSendListener, ValidationListener, AsynRespuesta{
 	private String[] listEventos;
 	private Boolean esNuevo;
 	private ConfiguracionPreferencias preferencias;
+	private Preferencias pref;
 	private int estado;
-	
-	private ApplicationDataContext eventoDAO;
-	private Button botonActualizar;
+	private String ip;
+	private String port;
 	private Button botonSend;
 	private TextView fechaEvento;
 	private TextView horaEvento;
@@ -99,19 +89,17 @@ OnSendListener, ValidationListener, AsynRespuesta{
 		botonEventos = (Button)findViewById(R.id.btnEvento);
 		botonGuardar = (Button)findViewById(R.id.btnGuardarEvento);
 		botonEnviar = (Button)findViewById(R.id.btnEnviarEvento);
-		botonActualizar = (Button)findViewById(R.id.btnActualizarEvento);
+		
 		botonSend = (Button)findViewById(R.id.btnSendEvento);
 		fechaTxt = (EditText)findViewById(R.id.editFechaEvento);
 		fechaEvento = (TextView)findViewById(R.id.txtFechaEvento);
 		horaEvento = (TextView)findViewById(R.id.txtHoraEvento);
 		listview = (ListView)findViewById(R.id.listEventosSeleccionados);
-		descripcion = (EditText)findViewById(R.id.editDescEvento);
-		efectos = (EditText)findViewById(R.id.editEfecSecundarios);
-		amenazas = (EditText)findViewById(R.id.editAmenazas);
-		
-		preferencias = new ConfiguracionPreferencias(this);
-		validator =  new Validator(this);
-		validator.setValidationListener(this);	
+	
+		pref = new Preferencias();
+		pref.init(this);
+		ip = pref.getHost();
+		port = pref.getPort();
 		
 		if(cargarEvento()){
 			Toast.makeText(this, "Cargando", Toast.LENGTH_SHORT).show();
@@ -120,14 +108,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 		else{
 			Toast.makeText(this, "Nuevo", Toast.LENGTH_SHORT).show();
 			esNuevo = true;
-		}
-		
-		try {
-			eventoDAO = new ApplicationDataContext(this);
-		} catch (AdaFrameworkException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		}		
 		
 		botonFecha.setOnClickListener(new OnClickListener(){
 
@@ -146,42 +127,32 @@ OnSendListener, ValidationListener, AsynRespuesta{
 				showEventoDialog(v);
 			}
 			
-		});
+		});		
 		
-		botonGuardar.setOnClickListener(new OnClickListener(){
+		botonSend.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				getDatos();
-				estado = 1;
-				validator.validate();							
-			}			
-		});
-		
-		botonEnviar.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub				
-				getDatos();
-				estado = 2;
-				validator.validate();	
-			}			
-		});
-		
-		botonActualizar.setOnClickListener(new OnClickListener(){
-
-			private List<Evento> eventos;
-			private List<TipoEvento> tipoEventos;			
-
-			@Override
-			public void onClick(View v) {				
-				if(guardarEvento())
-					finish();
+				
+				if(guardarEvento()){
+					if(evento!=null)
+						if(sendEvento(evento)){
+							Toast.makeText(getApplicationContext(), "Enviando evento", Toast.LENGTH_SHORT).show();
+							if(listaEventos!=null)
+								if(sendListaEventos(listaEventos))
+									Toast.makeText(getApplicationContext(), "Enviando lista de eventos", Toast.LENGTH_SHORT).show();
+								else
+									Toast.makeText(getApplicationContext(), "No se envio información", Toast.LENGTH_SHORT).show();
+							else
+								Toast.makeText(getApplicationContext(), "Lista de eventos null", Toast.LENGTH_SHORT).show();
+							//finish();
+						}else
+							Toast.makeText(getApplicationContext(), "No se envió información", Toast.LENGTH_SHORT).show();
+				}
 				else
-					Toast.makeText(getApplicationContext(), "No se actualizó/registró información", Toast.LENGTH_SHORT).show();						
-			}			
+					Toast.makeText(getApplicationContext(), "No se actualizó/registró información", Toast.LENGTH_SHORT).show();
+			}
+			
 		});
 	}
 	
@@ -191,13 +162,13 @@ OnSendListener, ValidationListener, AsynRespuesta{
 			ApplicationDataContext dbManager = DataContext.getInstance(getApplicationContext());			
 			try {
 				evento.setIdevento(identificador);
-				evento.bind(EventoActivity.this, DataBinder.BINDING_UI_TO_ENTITY);			
+				evento.bind(EventoActivity.this, DataBinder.BINDING_UI_TO_ENTITY);				
 				if(evento.validate(getApplicationContext())){							
 					evento.setStatus(Entity.STATUS_NEW);
 					dbManager.eventoDAO.add(evento);	
 					dbManager.eventoDAO.save();
 					setResult(RESULT_OK);
-					
+					Log.d("metodo guardarEvento", "despues de la validacion");
 					listaEventos = new ArrayList<TipoEvento>();						
 					if(listview.getCount() > 0){
 						for(int j = 0; j < listEventos.length; j++){
@@ -205,10 +176,13 @@ OnSendListener, ValidationListener, AsynRespuesta{
 							tipoevento.setEvento(listEventos[j]);
 							tipoevento.setIdevento(identificador);
 							listaEventos.add(tipoevento);
+							Log.d("Lista de eventos", tipoevento.getEvento());
 						}
 						dbManager.tipoEventoDAO.addAll(listaEventos);
 						dbManager.tipoEventoDAO.save();						
 						setResult(RESULT_OK);
+						//pref.setEvento();
+						pref.setNuevo(false);
 					}else{
 						Toast.makeText(getApplicationContext(), "Agregue evento(s)", Toast.LENGTH_SHORT).show();
 						return false;
@@ -224,7 +198,6 @@ OnSendListener, ValidationListener, AsynRespuesta{
 				        Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_SHORT).show();
 				}
 			} catch (AdaFrameworkException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return false;
 			}			
@@ -265,6 +238,8 @@ OnSendListener, ValidationListener, AsynRespuesta{
 							dbManager.tipoEventoDAO.addAll(listaEventos);
 							dbManager.tipoEventoDAO.save();	
 							setResult(RESULT_OK);
+							//pref.setEvento();
+							pref.setNuevo(false);
 						}else{
 							Toast.makeText(getApplicationContext(), "Agregue evento(s)", Toast.LENGTH_SHORT).show();
 							return false;
@@ -292,8 +267,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 	
 	private Boolean cargarEvento(){						
 		
-		ApplicationDataContext dbManager = DataContext.getInstance(getApplicationContext());
-		
+		ApplicationDataContext dbManager = DataContext.getInstance(getApplicationContext());		
 		try {
 			String wherePattern = "idevento LIKE ?";
 			List<Evento> eventos;
@@ -322,28 +296,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 		return true;
 	}
 	
-	private void getDatos(){
-		evento = new Evento();
-		evento.setFecha(fecha);
-		evento.setHora(hora);
-		evento.setDescripcion(descripcion.getText().toString());
-		evento.setEfectos(efectos.getText().toString());
-		evento.setAmenazas(amenazas.getText().toString());
-		evento.setIdevento(identificador);
-		listaEventos = new ArrayList<TipoEvento>();
-		if(listEventos == null || listEventos.length == 0){
-			Toast.makeText(getApplicationContext(), "Agregue un evento", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		for(int i = 0; i < listEventos.length; i++){
-			TipoEvento tipoevento = new TipoEvento();
-			tipoevento.setEvento(listEventos[i]);
-			tipoevento.setIdevento(identificador);
-			listaEventos.add(tipoevento);
-		}
-	}
-	
-	private Boolean sendEvento(Evento e, String ip, String port){
+	private Boolean sendEvento(Evento e){
 		Comunicacion<Evento> mensaje = new Comunicacion<Evento>(Evento.class, "evento", ip, port);
 		if(mensaje.enviarObjeto(e))
 			return true;
@@ -351,7 +304,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 			return false;
 	}
 	
-	private Boolean sendListaEventos(ArrayList<TipoEvento> lista, String ip, String port){
+	private Boolean sendListaEventos(ArrayList<TipoEvento> lista){
 		Comunicacion<TipoEvento> mensaje = new Comunicacion<TipoEvento>(TipoEvento.class,"tipoevento", ip, port);
 		if(mensaje.enviarListaObjetos(lista))
 			return true;
@@ -440,12 +393,12 @@ OnSendListener, ValidationListener, AsynRespuesta{
 		// TODO Auto-generated method stub
 		if(estado == 2){
 			//setDataTask(evento);
-			if(sendEvento(evento, preferencias.getIpPref(), preferencias.getPortPref()))
+			if(sendEvento(evento))
 				Toast.makeText(this, "Evento creado", Toast.LENGTH_LONG).show();
 			else
 				Toast.makeText(this, "Problemas al enviar el evento", Toast.LENGTH_LONG).show();
 			//setListTask(listaEventos);
-			if(sendListaEventos(listaEventos, preferencias.getIpPref(),preferencias.getPortPref()))
+			if(sendListaEventos(listaEventos))
 					preferencias.setEventoPref("enviado");
 			super.finish();
 		}

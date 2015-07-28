@@ -39,10 +39,12 @@ import com.resphere.android.modelo.context.ApplicationDataContext;
 import com.resphere.android.modelo.context.DataContext;
 import com.resphere.android.util.AsynRespuesta;
 import com.resphere.android.util.AsyncTaskSend;
+import com.resphere.android.util.Comunicacion;
 import com.resphere.android.util.GPSTask;
 import com.resphere.android.util.ItemWidget;
 import com.resphere.android.util.LayoutActivity;
 import com.resphere.android.util.Posicion;
+import com.resphere.android.util.Preferencias;
 import com.resphere.android.util.Reflection;
 import com.resphere.android.util.UbicacionTask;
 //import com.mobandme.ada.Entity;
@@ -53,33 +55,33 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 	private String port;
 	Ubicacion ubicacion;
 	
-	@Required(order = 6, message = "No es una sector valido")
-	@TextRule(order =7, minLength = 3, maxLength = 30, message = "Introduce entre 6 a 30 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtSector)
+	//@Required(order = 6, message = "No es una sector valido")
+	//@TextRule(order =7, minLength = 3, maxLength = 30, message = "Introduce entre 6 a 30 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtSector)
 	public EditText sector;
-	@Required(order = 8, message = "No es una distancia valida")
-	@TextRule(order =9, minLength = 1, maxLength = 3, message = "Introduce entre 1 a 3 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtDistancia)
+	//@Required(order = 8, message = "No es una distancia valida")
+	//@TextRule(order =9, minLength = 1, maxLength = 3, message = "Introduce entre 1 a 3 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtDistancia)
 	public EditText distancia;
-	@Required(order = 10, message = "No es un tiempo valido")
-	@TextRule(order =12, minLength = 1, maxLength = 3, message = "Introduce entre 1 a 3 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtTiempo)
+	//@Required(order = 10, message = "No es un tiempo valido")
+	//@TextRule(order =12, minLength = 1, maxLength = 3, message = "Introduce entre 1 a 3 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtTiempo)
 	public EditText tiempo;
-	@Required(order = 13, message = "No es un punto valido")
-	@TextRule(order =14, minLength = 3, maxLength = 30, message = "Introduce entre 3 a 30 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtReferencia)
+	//@Required(order = 13, message = "No es un punto valido")
+	//@TextRule(order =14, minLength = 3, maxLength = 30, message = "Introduce entre 3 a 30 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtReferencia)
 	public EditText referencia;
-	@Required(order = 15, message = "No es una canton valida")
-	@TextRule(order =16, minLength = 3, maxLength = 30, message = "Introduce entre 3 a 30 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtX)
+	//@Required(order = 15, message = "No es una canton valida")
+	//@TextRule(order =16, minLength = 3, maxLength = 30, message = "Introduce entre 3 a 30 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtX)
 	public EditText latitud;
-	@Required(order = 17, message = "No es una canton valida")
-	@TextRule(order =18, minLength = 3, maxLength = 20, message = "Introduce entre 6 a 20 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtY)
+	//@Required(order = 17, message = "No es una canton valida")
+	//@TextRule(order =18, minLength = 3, maxLength = 20, message = "Introduce entre 6 a 20 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtY)
 	public EditText longitud;
-	@Required(order = 19, message = "No es una canton valida")
-	@TextRule(order =20, minLength = 3, maxLength = 20, message = "Introduce entre 3 a 20 caracteres")
-	@ItemWidget(className = EditText.class, identifier = R.id.txtAltitud)
+	//@Required(order = 19, message = "No es una canton valida")
+	//@TextRule(order =20, minLength = 3, maxLength = 20, message = "Introduce entre 3 a 20 caracteres")
+	//@ItemWidget(className = EditText.class, identifier = R.id.txtAltitud)
 	public EditText altitud;
 	
 	private TextView tipoParroquia;
@@ -123,6 +125,8 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 	
 	private Boolean esNuevo;
 	private Button actualizar;
+	private Button send;
+	private Preferencias pref;
 	
 	@Override
     protected int getLayout(){return R.layout.activity_ubicacion_geografica;}
@@ -148,17 +152,18 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 		SharedPreferences prefe = getSharedPreferences("datos",Context.MODE_PRIVATE);
 		ip = prefe.getString("ip", "");
 		port = prefe.getString("port", "");
+		pref = new Preferencias();
+		pref.init(this);
 		
-		gps = (Button)findViewById(R.id.btnGPS);
-		guardar = (Button)findViewById(R.id.btnGuardar);
-		enviar = (Button)findViewById(R.id.btnEnviar);
-		
-		actualizar = (Button)findViewById(R.id.btnActualizarUbicacion);
-		
+		gps = (Button)findViewById(R.id.btnGPS);		
+		send = (Button)findViewById(R.id.btnEnviarUbicacion);			
 		spProvincia = (Spinner)findViewById(R.id.spinnerProvincia);
 		spCanton = (Spinner)findViewById(R.id.spinnerCanton);
 		spParroquia = (Spinner)findViewById(R.id.spinnerParroquia);
-		tipoParroquia = (TextView)findViewById(R.id.textTipoParroquia);		
+		tipoParroquia = (TextView)findViewById(R.id.textTipoParroquia);
+		latitud = (EditText)findViewById(R.id.txtX);
+		longitud = (EditText)findViewById(R.id.txtY);
+		altitud = (EditText)findViewById(R.id.txtAltitud);
 		
 		dbManager = DataContext.getInstance(this);
 		String wherePattern = "idprovincia NOT LIKE ?";
@@ -250,9 +255,7 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 
 											@Override
 											public void onNothingSelected(
-													AdapterView<?> arg0) {
-												// TODO Auto-generated method stub
-												
+													AdapterView<?> arg0) {												
 											}
 											
 										});
@@ -269,16 +272,13 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 					} catch (AdaFrameworkException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
-				
+					}				
 				}
 
 				@Override
 				public void onNothingSelected(AdapterView<?> arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-		    	
+					// TODO Auto-generated method stub					
+				}		    	
 		    });
 					
 		} catch (AdaFrameworkException e1) {
@@ -287,22 +287,35 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 		}
 		ubicacionDAO = DataContext.getInstance(this);		
 		
-		guardar.setOnClickListener(this);	
+		//guardar.setOnClickListener(this);	
 		gps.setOnClickListener(this);
-		enviar.setOnClickListener(this);		
-		
-		actualizar.setOnClickListener(new OnClickListener(){
+		//enviar.setOnClickListener(this);		
+			
+		send.setOnClickListener(new OnClickListener(){
+
 			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
+			public void onClick(View v) {
 				if(saveUbicacion()){
 					Toast.makeText(getApplicationContext(), "Registrando información", Toast.LENGTH_SHORT).show();
-					finish();
-				}else{
-					Toast.makeText(getApplicationContext(), "Problemas con la información", Toast.LENGTH_SHORT).show();
-				}					
+					if(ubicacion!=null){
+						if(sendUbicacion(ubicacion))
+							Toast.makeText(getApplicationContext(), "Enviando información", Toast.LENGTH_SHORT).show();
+						else
+							Toast.makeText(getApplicationContext(), "Problemas al enviar información, intente mas tarde", Toast.LENGTH_SHORT).show();
+					}else
+						Toast.makeText(getApplicationContext(), "Ubicacion null", Toast.LENGTH_SHORT).show();
+				}else
+					Toast.makeText(getApplicationContext(), "Problemas con la información", Toast.LENGTH_SHORT).show();				
 			}			
-		});		
+		});
+	}
+	
+	private Boolean sendUbicacion(Ubicacion u){
+		Comunicacion<Ubicacion> mensaje = new Comunicacion<Ubicacion>(Ubicacion.class,"ubicacion", ip, port);
+		if(mensaje.enviarObjeto(u))
+			return true;
+		else
+			return false;
 	}
 	
 	private Boolean saveUbicacion(){
@@ -315,6 +328,9 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 				ubicacion.setProvincia((String) spProvincia.getSelectedItem());
 				ubicacion.setCanton((String) spCanton.getSelectedItem());
 				ubicacion.setParroquia((String) spParroquia.getSelectedItem());
+				ubicacion.setLatitud(latitud.getText().toString());
+				ubicacion.setLongitud(longitud.getText().toString());
+				ubicacion.setAltitud(altitud.getText().toString());
 				Log.d("Provincia: ", ubicacion.getProvincia());
 				ubicacion.bind(UbicacionActivity.this, DataBinder.BINDING_UI_TO_ENTITY);				
 				if(ubicacion.validate(getApplicationContext())){
@@ -331,7 +347,7 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 				        }
 				        Toast.makeText(getApplicationContext(), sb.toString(), Toast.LENGTH_SHORT).show();
 				        return false;
-				}	
+				}				
 			} catch (AdaFrameworkException e) {
 				e.printStackTrace();
 				return false;
@@ -409,9 +425,9 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 		ubicacion.setDistancia(distancia.getText().toString());
 		ubicacion.setTiempo(tiempo.getText().toString());
 		ubicacion.setReferencia(referencia.getText().toString());
-		ubicacion.setLatitud(latitud.getText().toString());
-		ubicacion.setLongitud(longitud.getText().toString());
-		ubicacion.setAltitud(altitud.getText().toString());
+		//ubicacion.setLatitud(latitud.getText().toString());
+		//ubicacion.setLongitud(longitud.getText().toString());
+		//ubicacion.setAltitud(altitud.getText().toString());
 		ubicacion.setIdubicacion(String.valueOf(System.currentTimeMillis()/1000));
 		ubicacion.setIdevento(identificador);
 		return true;
@@ -518,16 +534,20 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 	@Override
 	public void resul(Posicion value) {
 		// TODO Auto-generated method stub
-		
-		if(value == null){
-		Toast respuesta = Toast.makeText(getApplicationContext(), "posicion null", Toast.LENGTH_SHORT);
-		respuesta.show();
-		}
-		else{				
-			latitud.setText(value.getLatitud());
-			longitud.setText(value.getLongitud());
-			altitud.setText(value.getAltitud());
-		}
+			if(value != null){
+				//ApplicationDataContext dbManager = DataContext.getInstance(getApplicationContext());
+				ubicacion.setLatitud(value.getLatitud());
+				ubicacion.setLongitud(value.getLongitud());
+				ubicacion.setAltitud(value.getAltitud());
+				//ubicacion.bind(UbicacionActivity.this, DataBinder.BINDING_UI_TO_ENTITY);
+				latitud.setText(value.getLatitud());
+				longitud.setText(value.getLongitud());
+				altitud.setText(value.getAltitud());
+			}
+			else{				
+				
+				Toast.makeText(getApplicationContext(), "posicion null", Toast.LENGTH_SHORT).show();
+			}	
 	}
 
 	@Override
@@ -574,12 +594,7 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 
 	@Override
 	public void finish() {
-	  // Prepare data intent 
-	  //Intent data = new Intent();
-	  //data.putExtra("idu", ubicacion.getIdevento());	  
-	  // Activity finished ok, return the data
-	  //setResult(RESULT_OK, data);
-	  //Toast.makeText(this, ubicacion.getIdU(), Toast.LENGTH_LONG).show();
+	 
 	  super.finish();
 	}
 	

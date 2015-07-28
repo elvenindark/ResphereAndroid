@@ -40,7 +40,7 @@
 
             <Button
                 android:id="@+id/btnFechaEvento"
-                style="?android:attr/buttonStyleSmall"
+                style="buttonStyle"
                 android:layout_span="1"
                 android:text="Agregar fecha" />
         </TableRow>
@@ -53,12 +53,12 @@
                  <TextView
                      android:id="@+id/textView11"
                      android:layout_span="1"
-                     android:text="Evento Generador"
+                     android:text="Evento(s) Generador(es)"
                      android:textAppearance="?android:attr/textAppearanceMedium" />
 
                  <Button
                      android:id="@+id/btnEvento"
-                     style="?android:attr/buttonStyleSmall"
+                     style="buttonStyle"
                      android:layout_span="1"
                      android:text="Agregar" />
              
@@ -129,12 +129,14 @@
  				<Button
  				    android:id="@+id/btnGuardarEvento"
  				    android:layout_span="1"
- 				    android:text="Guardar" />
+ 				    android:text="Guardar"
+ 				    android:visibility="gone" />
 
  				<Button
  				    android:id="@+id/btnEnviarEvento"
  				    android:layout_span="1"
- 				    android:text="Enviar" />
+ 				    android:text="Enviar"
+ 				    android:visibility="gone" />
   
 			</TableRow>
 
@@ -148,14 +150,15 @@
  				    android:layout_span="1"
  				    android:ems="10"
  				    android:hint="Fecha evento"
- 				    android:inputType="date" />
+ 				    android:inputType="date"
+ 				    android:visibility="gone" />
 
  				<EditText
  				    android:id="@+id/editText3"
  				    android:layout_width="wrap_content"
  				    android:layout_height="wrap_content"
  				    android:ems="10"
- 				    android:visibility="invisible" />
+ 				    android:visibility="gone" />
 
  			</TableRow>
 
@@ -167,12 +170,14 @@
  			    <Button
  			        android:id="@+id/btnActualizarEvento"
  			        android:layout_span="1"
- 			        android:text="@string/btn_Actualizar" />
+ 			        android:text="@string/btn_Actualizar"
+ 			        android:visibility="gone" />
 
  			    <Button
  			        android:id="@+id/btnSendEvento"
- 			        android:layout_span="1"
+ 			        android:layout_span="1" 			        
  			        android:text="@string/btn_Enviar" />
+
  			</TableRow>
 		
 		</TableLayout>

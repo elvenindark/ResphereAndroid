@@ -25,6 +25,8 @@ import com.resphere.android.modelo.TipoPoblacion;
 import com.resphere.android.modelo.context.ApplicationDataContext;
 import com.resphere.android.modelo.context.DataContext;
 import com.resphere.android.util.AsyncTaskSend;
+import com.resphere.android.util.Comunicacion;
+import com.resphere.android.util.Preferencias;
 import com.resphere.android.util.Reflection;
 import com.resphere.android.vista.adapter.CustomListPoblacion;
 import com.resphere.android.vista.fragment.PoblacionFragment;
@@ -47,6 +49,7 @@ public class AfectacionPoblacionActivity extends FragmentActivity implements Pob
 	private String ip;
 	private String port;
 	private Button spinnerCustomNe;
+	private Preferencias pref;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -71,6 +74,11 @@ public class AfectacionPoblacionActivity extends FragmentActivity implements Pob
 		spinnerCustomNe = (Button)findViewById(R.id.spinnerCustomNe);
 		guardar = (Button)findViewById(R.id.btnGuardarPoblaciones);
 		enviar = (Button)findViewById(R.id.btnEnviarPoblaciones);
+		
+		pref = new Preferencias();
+		pref.init(this);
+		ip = pref.getHost();
+		port = pref.getPort();
 		
 		isFilled = new boolean[poblacionAfectada.length];
 		arrayTipoPoblacion = new TipoPoblacion[poblacionAfectada.length+poblacionne.length];
@@ -148,9 +156,16 @@ public class AfectacionPoblacionActivity extends FragmentActivity implements Pob
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
-				setListTask(listaPoblacion);
-				Toast.makeText(getApplicationContext(), "Poblacion enviada", Toast.LENGTH_SHORT).show();
-				finish();
+				if(guardarDatos(listaPoblacion)){
+					if(sendListPoblacion(listaPoblacion)){
+						Toast.makeText(getApplicationContext(), "Poblacion guardada correctamente", Toast.LENGTH_SHORT).show();
+					}else
+						Toast.makeText(getApplicationContext(), "Problemas al guardar poblacion", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "Poblacion enviada correctamente", Toast.LENGTH_SHORT).show();
+					finish();
+				}					
+				else
+					Toast.makeText(getApplicationContext(), "Problemas al guardar poblacion", Toast.LENGTH_SHORT).show();				
 			}
 	    	
 	    });
@@ -245,6 +260,14 @@ public class AfectacionPoblacionActivity extends FragmentActivity implements Pob
 		Log.d("size on poblacionimpactada", " "+atributos.size());
 		AsyncTaskSend enviar = new AsyncTaskSend(ip, port, "poblacion", 1, listofobjects);
 		enviar.execute(atributos);
+	}
+	
+	public Boolean sendListPoblacion(ArrayList<Poblacion> listPoblacion){
+		Comunicacion<Poblacion> mensaje = new Comunicacion<Poblacion>(Poblacion.class, "poblacion", ip, port);
+		if(mensaje.enviarListaObjetos(listPoblacion))
+			return true;
+		else
+			return false;
 	}
 	
 	public String[] getStringArray() {

@@ -22,17 +22,17 @@ public class Evento extends Entity {
 	@Databinding(ViewId = R.id.editDescEvento)
 	@TableField(name ="descripcion", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |Ò—]{5,50}", message = "Problemas en el formato: 5 a 50 caracteres")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres ")
 	private String descripcion;
 	@Databinding(ViewId = R.id.editEfecSecundarios)
 	@TableField(name ="efectos", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |Ò—]{5,50}", message = "Problemas en el formato: 5 a 50 caracteres")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String efectos;
 	@Databinding(ViewId = R.id.editAmenazas)
 	@TableField(name ="amenazas", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |Ò—]{5,50}", message = "Problemas en el formato: 5 a 50 caracteres")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String amenazas;
 	@TableField(name ="idevento", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message="identificador vacio")

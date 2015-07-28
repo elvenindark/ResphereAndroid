@@ -36,6 +36,10 @@ public class Preferencias {
 	
 	public static final String INTERNET = "internet";
 	
+	public static final String EVENTO = "guardado";
+	
+	public static final String NUEVO = "nuevo";
+	
 	private static SharedPreferences _preferences;
 	
 	public static String getLogin() {	
@@ -174,6 +178,49 @@ public class Preferencias {
 	public void setFirstUse(){
 		Editor editor = _preferences.edit();
 		editor.putBoolean(FIRST_USE, false).commit();
+	}
+	
+	public void setEvento(){
+		Editor editor = _preferences.edit();
+		editor.putBoolean(EVENTO, false).commit();
+	}
+	
+	public static Boolean getEvento(){
+		try
+		{
+			if(_preferences.contains(EVENTO))
+				if(_preferences.getBoolean(EVENTO, true))
+					return true;
+				else
+					return false;
+			else
+				return true;
+		}
+		catch(Exception e){
+			return true;
+		}		
+	}
+	
+	public void setNuevo(Boolean nuevo){
+		Editor editor = _preferences.edit();
+		editor.putBoolean(NUEVO, nuevo).commit();
+	}
+	
+	public static Boolean getNuevo(){
+		return _preferences.getBoolean(NUEVO, true);
+		/*try
+		{
+			if(_preferences.contains(NUEVO))
+				if(_preferences.getBoolean(NUEVO, true))
+					return _preferences.getBoolean(NUEVO, true);
+				else
+					return false;
+			else
+				return true;
+		}
+		catch(Exception e){
+			return true;
+		}	*/
 	}
 	
 	public void setInternetAllow(Boolean flag){

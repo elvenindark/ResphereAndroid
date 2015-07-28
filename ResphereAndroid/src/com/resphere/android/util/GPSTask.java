@@ -20,7 +20,8 @@ public class GPSTask extends AsyncTask<Void, Void, Posicion> {
 	private LocationListener locListener;
     Posicion posicion;
     boolean providerEnable = false;    
-    Context context = null;    
+    Context context = null;
+	private boolean canGetLocation;    
     public GPSTask(Context context){
     	this.context = context;
     }
@@ -55,14 +56,14 @@ public class GPSTask extends AsyncTask<Void, Void, Posicion> {
 		            posicion.setAltitud(String.valueOf(loc.getAltitude()));
 		    	}
 		    	public void onProviderDisabled(String provider){
-		    		//lblEstado.setText("Provider OFF");
+
 		    	}
 		    	public void onProviderEnabled(String provider){
-		    		//lblEstado.setText("Provider ON ");
+
 		    	}
 		    	public void onStatusChanged(String provider, int status, Bundle extras){
 		    		Log.i("", "Provider Status: " + status);
-		    		//lblEstado.setText("Provider Status: " + status);
+
 		    	}
 	    	};
 	    	
@@ -72,9 +73,17 @@ public class GPSTask extends AsyncTask<Void, Void, Posicion> {
 	             //Obtenemos la localizaci—n actual al iniciar
 	             Location loc = locManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 	             posicion = new Posicion();
-	             posicion.setLatitud(String.valueOf(loc.getLatitude()));
-		         posicion.setLongitud(String.valueOf(loc.getLongitude()));
-		         posicion.setAltitud(String.valueOf(loc.getAltitude()));
+	             if(loc!=null){
+		             posicion.setLatitud(String.valueOf(loc.getLatitude()));
+			         posicion.setLongitud(String.valueOf(loc.getLongitude()));
+			         posicion.setAltitud(String.valueOf(loc.getAltitude()));
+			         Log.d("GPSTask localizacion method GPS loc not null", posicion.getLatitud());
+	             }else{
+	            	 posicion.setLatitud("0.000000");
+			         posicion.setLongitud("0.000000");
+			         posicion.setAltitud("0.000000");
+			         Log.d("GPSTask localizacion method GPS loc null", posicion.getLatitud());
+	             }
 			}
 			else if (locManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
 	            // Location updates provided by the NETWORK_PROVIDER should be handled by the provide listener
@@ -84,14 +93,22 @@ public class GPSTask extends AsyncTask<Void, Void, Posicion> {
 	            //Obtenemos la localizaci—n actual al iniciar
 	            Location loc = locManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 	            posicion = new Posicion();
-	            posicion.setLatitud(String.valueOf(loc.getLatitude()));
-	            posicion.setLongitud(String.valueOf(loc.getLongitude()));
-	            posicion.setAltitud(String.valueOf(loc.getAltitude()));
+	            if(loc!=null){
+		            posicion.setLatitud(String.valueOf(loc.getLatitude()));
+		            posicion.setLongitud(String.valueOf(loc.getLongitude()));
+		            posicion.setAltitud(String.valueOf(loc.getAltitude()));
+		            Log.d("GPSTask localizacion method NETWORK loc not null", posicion.getLatitud());
+	            }else{
+	            	 posicion.setLatitud("0.000000");
+			         posicion.setLongitud("0.000000");
+			         posicion.setAltitud("0.000000");
+			         Log.d("GPSTask localizacion method NETWORK loc null", posicion.getLatitud());
+	             }	            
 			}
+			
 		}catch(Exception e){
 			e.printStackTrace();
-		}		
-		
+		}			
 	}
-
+	
 }
