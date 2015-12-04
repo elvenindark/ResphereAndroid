@@ -25,7 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class RespuestaDetalleActivity extends FragmentActivity {
+public class RespuestaHumanitariaLista extends FragmentActivity {
 
 	private TextView titulo;
 	private String idevento;
@@ -41,7 +41,7 @@ public class RespuestaDetalleActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_respuesta_detalle);
+		setContentView(R.layout.activity_respuesta_humanitaria_lista);
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			idevento = (String) extras.get("identificador");

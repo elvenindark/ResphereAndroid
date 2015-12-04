@@ -55,8 +55,8 @@ public class ConfiguracionActivity extends Activity {
         
         ip = (EditText)findViewById(R.id.editIP);
         port = (EditText)findViewById(R.id.editPort);
-        Button guardarIPPort = (Button)findViewById(R.id.btnGuardarIPPort);       
-        Button memory = (Button)findViewById(R.id.memoria);             
+        Button guardarIPPort = (Button)findViewById(R.id.btnGuardarIPPort);      
+                   
         ip.setText(preferencias.getIpPref());
         port.setText(preferencias.getPortPref()); 
        
@@ -83,21 +83,7 @@ public class ConfiguracionActivity extends Activity {
 			}        	
         });
         
-       
-	        
-	        memory.setOnClickListener(new OnClickListener(){
-
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					MemoryInfo mi = new MemoryInfo();
-					ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-					activityManager.getMemoryInfo(mi);
-					long availableMegs = mi.availMem / 1048576L;
-					Toast.makeText(getApplicationContext(), "memoria disponible es " + String.valueOf(availableMegs), Toast.LENGTH_LONG).show();					
-				}
-	        	
-	        });
+       	      
 	        
 	        /*IntentFilter filter = new IntentFilter();
 	        filter.addAction(UbicacionService.ACTION_PROGRESO);        

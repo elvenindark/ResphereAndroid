@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     android:animateLayoutChanges="false" >
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    	xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:context=".UbicacionGeografica" >
@@ -125,7 +124,7 @@
 		              android:ems="10"
 		              android:hint="Punto Referencia"
 		              android:inputType="text"
-		              android:nextFocusDown="@+id/txtX"
+		              android:nextFocusDown="@+id/txtLatitud"
 		              android:singleLine="true" />
 
 		    </TableRow>
@@ -158,24 +157,27 @@
 		        android:layout_height="wrap_content" >
 
  				<EditText
- 				    android:id="@+id/txtX"
+ 				    android:id="@+id/txtLongitud"
  				    android:layout_width="wrap_content"
  				    android:layout_height="wrap_content"
  				    android:layout_weight="1"
  				    android:ems="10"
  				    android:hint="Longitud"
- 				    android:nextFocusDown="@+id/txtY"
- 				    android:inputType="numberDecimal|numberSigned" />
+ 				    android:inputType="numberDecimal|numberSigned"
+ 				    android:nextFocusDown="@+id/txtAltitud" >
+
+ 				    <requestFocus />
+ 				</EditText>
 
  				<EditText
- 				    android:id="@+id/txtY"
+ 				    android:id="@+id/txtLatitud"
  				    android:layout_width="wrap_content"
  				    android:layout_height="wrap_content"
  				    android:layout_weight="1"
  				    android:ems="10"
  				    android:hint="Latitud"
- 				    android:nextFocusDown="@+id/txtAltitud"
- 				    android:inputType="numberDecimal|numberSigned" />
+ 				    android:inputType="numberDecimal|numberSigned"
+ 				    android:nextFocusDown="@+id/txtLongitud" />
   
 			</TableRow>
 			

@@ -172,7 +172,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 22:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent7 = new Intent(PrincipalActivity.this, AfectacionSaludActivity.class);
@@ -182,7 +182,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 30:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent8 = new Intent(PrincipalActivity.this, AyudaHumanitariaActivity.class);
@@ -192,7 +192,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 31:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent9 = new Intent(PrincipalActivity.this, ImpactoEventoActivity.class);
@@ -202,7 +202,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 40:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent10 = new Intent(PrincipalActivity.this, NecesidadesUrgentesActivity.class);
@@ -212,7 +212,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 41:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent11 = new Intent(PrincipalActivity.this, NecesidadesRRHHActivity.class);
@@ -222,7 +222,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 42:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent12 = new Intent(PrincipalActivity.this, NecesidadesRecuperacionActivity.class);
@@ -232,7 +232,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 50:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent13 = new Intent(PrincipalActivity.this, ComentariosActivity.class);
@@ -242,7 +242,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 51:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent14 = new Intent(PrincipalActivity.this, EquipoEvaluacionActivity.class);
@@ -252,7 +252,7 @@ public class PrincipalActivity extends Activity {
              		}
              		break;
              	case 15:
-             		if(preferencias.isNewEventoPref()){
+             		if(pref.getNuevo()){
              			Toast.makeText(view.getContext(),"Guarde o envie el evento antes de usar esta opcion" , Toast.LENGTH_SHORT).show();
              		}else{
 	             		Intent intent15 = new Intent(PrincipalActivity.this, InicioActivity.class);

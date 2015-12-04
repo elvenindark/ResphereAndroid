@@ -92,7 +92,7 @@ public class RespuestaHumanitariaActivity extends Activity {
 		  .setAdapter(dataAdapter, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {				
-				Intent intent = new Intent(RespuestaHumanitariaActivity.this, RespuestaDetalleActivity.class);
+				Intent intent = new Intent(RespuestaHumanitariaActivity.this, RespuestaHumanitariaLista.class);
 				intent.putExtra("identificador", respuestas.get(which).getIdevento()); 
 				intent.putExtra("sector", String.valueOf(indice));
 				startActivity(intent);

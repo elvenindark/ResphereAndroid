@@ -290,7 +290,6 @@
         <item>Alojamiento, asentamientos humanos y artículos no alimentarios</item>
         <item>Acción de salud</item>
     </string-array>
-    
     <string-array name="MonitoreoRespuestaDescriptions">
         <item>Monitoreo de respuesta Abastecimiento de agua, saneamiento y promoción de la higiene</item>
         <item>Monitoreo de respuesta Seguridad alimentaria y nutrición</item>
@@ -305,5 +304,6 @@
     <string name="Enviar">Se ha enviado éxitosamente</string>
     <string name="NoGuardar">No se ha guardado correctamente</string>
     <string name="NoEnviar">No se ha enviado correctamente</string>
+    <string name="title_activity_respuesta_humanitaria_detalle">Respuesta Humanitaria Monitoreo</string>
 
 </resources>

@@ -161,8 +161,8 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 		spCanton = (Spinner)findViewById(R.id.spinnerCanton);
 		spParroquia = (Spinner)findViewById(R.id.spinnerParroquia);
 		tipoParroquia = (TextView)findViewById(R.id.textTipoParroquia);
-		latitud = (EditText)findViewById(R.id.txtX);
-		longitud = (EditText)findViewById(R.id.txtY);
+		latitud = (EditText)findViewById(R.id.txtLatitud);
+		longitud = (EditText)findViewById(R.id.txtLongitud);
 		altitud = (EditText)findViewById(R.id.txtAltitud);
 		
 		dbManager = DataContext.getInstance(this);

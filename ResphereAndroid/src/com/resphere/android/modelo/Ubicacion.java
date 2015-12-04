@@ -46,12 +46,12 @@ public class Ubicacion extends Entity{
 	@RequiredFieldValidation(message = "Referencia requerida")
 	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String referencia;
-	@Databinding(ViewId = R.id.txtY)
+	@Databinding(ViewId = R.id.txtLatitud)
 	@TableField(name ="latitud", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Latitud requerida")
 	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{3,12}", message = "Problemas en el formato latitud: 3 a 12 numeros")
 	private String latitud;
-	@Databinding(ViewId = R.id.txtX)
+	@Databinding(ViewId = R.id.txtLongitud)
 	@TableField(name ="longitud", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Longitud requerida")
 	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{3,12}", message = "Problemas en el formato longitud: 3 a 12 numeros")
