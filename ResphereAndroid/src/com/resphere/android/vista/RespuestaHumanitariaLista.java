@@ -16,14 +16,21 @@ import com.resphere.service.RespuestabysectorvFacadeREST;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+/*
+ *	TO-DO Saltar a la siguiente actividad 
+ * */
 
 public class RespuestaHumanitariaLista extends FragmentActivity {
 
@@ -49,7 +56,23 @@ public class RespuestaHumanitariaLista extends FragmentActivity {
 		}		
 		init();
 		setProgress(this);
-		getRespuesta(idevento, sector);
+		getRespuesta(idevento, sector);	
+		listRespuesta.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(RespuestaHumanitariaLista.this, RespuestaHumanitariaDetalleActivity.class);
+				intent.putExtra("idevento", respuestas.get(position).getIdevento()); 
+				intent.putExtra("indicador", respuestas.get(position).getIndicadorclave());
+				intent.putExtra("idindicador", respuestas.get(position).getIdindicadorclave());
+				intent.putExtra("idrespuesta", respuestas.get(position).getIdrespuesta());
+				intent.putExtra("observacion", respuestas.get(position).getObservacion());
+				startActivity(intent);
+			}
+			
+		});
 	}
 	
 	public void getRespuesta(final String idevento, final String sector){
@@ -97,6 +120,7 @@ public class RespuestaHumanitariaLista extends FragmentActivity {
 					respu.setIdrespuesta(item.getIdrespuesta());
 					respu.setIdsectorhumanitario(item.getIdsectorhumanitario());
 					respu.setObservacion(item.getObservacion());
+					respu.setIndicadorclave(item.getIdindicadorclave());
 					respuestasSave.add(respu);
 					respuestasString.add(resp);
 					Log.d("respuestas: ", resp);			

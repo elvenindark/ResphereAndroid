@@ -22,42 +22,50 @@ public class Ubicacion extends Entity{
 	@TableField(name ="parroquia", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Parroquia requerida")
 	private String parroquia;
-	@Databinding(ViewId = R.id.textTipoParroquia)
+	public static int tipo_parroquia = R.id.textTipoParroquia;
+	@Databinding(ViewId = 0x7f09009e)
 	@TableField(name ="tipo", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Tipo de parroquia requerido")
 	private String tipo;
-	@Databinding(ViewId = R.id.txtSector)
+	public static int txt_sector = R.id.txtSector;
+	@Databinding(ViewId =  0x7f0900a0)
 	@TableField(name ="sector", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Sector requerido")
 	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String sector;
-	@Databinding(ViewId = R.id.txtDistancia)
+	public static int txt_distancia = R.id.txtDistancia;
+	@Databinding(ViewId = 0x7f0900a2)
 	@TableField(name ="distancia", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Distancia requerida")
 	@RegularExpressionValidation(expression = "[0-9]{1,4}", message = "Distancia demasiado grande")
 	private String distancia;
-	@Databinding(ViewId = R.id.txtTiempo)
+	public static int txt_tiempo = R.id.txtTiempo;
+	@Databinding(ViewId = 0x7f0900a3)
 	@TableField(name ="tiempo", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Tiempo requerido")
 	@RegularExpressionValidation(expression = "[0-9]{1,4}", message = "Tiempo demasiado grande")
 	private String tiempo;
-	@Databinding(ViewId = R.id.txtReferencia)
+	public static int txt_referencia = R.id.txtReferencia;
+	@Databinding(ViewId = 0x7f0900a4)
 	@TableField(name ="referencia", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Referencia requerida")
 	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String referencia;
-	@Databinding(ViewId = R.id.txtLatitud)
+	public static int txt_latitud = R.id.txtLatitud;
+	@Databinding(ViewId = 0x7f0900a5)
 	@TableField(name ="latitud", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Latitud requerida")
 	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{3,12}", message = "Problemas en el formato latitud: 3 a 12 numeros")
 	private String latitud;
-	@Databinding(ViewId = R.id.txtLongitud)
+	public static int txt_longitud = R.id.txtLongitud;
+	@Databinding(ViewId = 0x7f0900a8)
 	@TableField(name ="longitud", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Longitud requerida")
 	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{3,12}", message = "Problemas en el formato longitud: 3 a 12 numeros")
 	private String longitud;
+	public static int txt_altitud = R.id.txtAltitud;
 	@TableField(name ="altitud", datatype = Entity.DATATYPE_STRING)
-	@Databinding(ViewId = R.id.txtAltitud)	
+	@Databinding(ViewId = 0x7f0900a9)	
 	@RegularExpressionValidation(expression = "[0-9|.|0-9]{1,10}", message = "Problemas en el formato altitud: 1 a 10 numeros")
 	private String altitud;
 	@TableField(name = "idevento", datatype = Entity.DATATYPE_STRING, required = true)

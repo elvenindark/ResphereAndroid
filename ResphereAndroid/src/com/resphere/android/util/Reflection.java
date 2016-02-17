@@ -30,8 +30,8 @@ public class Reflection {
 		Method[] metods = new Method[metodos.size()];		
 		for(int i = 0; i < metodos.size(); i++){
 			try {
-				metods[i] = aClass.getDeclaredMethod(metodos.get(i));
-				valores.add((String)metods[i].invoke(object));						
+				metods[i] = aClass.getDeclaredMethod(metodos.get(i));					
+				valores.add(String.valueOf(metods[i].invoke(object)));
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace(); return null;
 			} catch (IllegalArgumentException e) {

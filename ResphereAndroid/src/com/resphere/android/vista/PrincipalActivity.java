@@ -346,7 +346,17 @@ public class PrincipalActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
-		switch(item.getItemId()){
+		
+		if(item.getItemId() == R.id.menu_lista){
+			Intent intent_configuracion = new Intent(this, ConfiguracionActivity.class);
+			this.startActivity(intent_configuracion);			
+		}else{
+			return super.onOptionsItemSelected(item);
+		}
+		
+		return true;
+		/*switch(item.getItemId()){
+		//case R.id.menu_lista:		
 		case R.id.menu_lista:
 			//Intent intent_configuracion = new Intent(this, ConfiguracionActivity.class);
 			Intent intent_configuracion = new Intent(this, ConfiguracionActivity.class);
@@ -356,7 +366,7 @@ public class PrincipalActivity extends Activity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-		return true;
+		return true;*/
 	}
 	
 	@Override

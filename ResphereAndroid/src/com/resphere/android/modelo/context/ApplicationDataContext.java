@@ -15,6 +15,7 @@ import com.resphere.android.modelo.Evaluacion;
 import com.resphere.android.modelo.Evento;
 import com.resphere.android.modelo.Impacto;
 import com.resphere.android.modelo.MedioVida;
+import com.resphere.android.modelo.Monitoreo;
 import com.resphere.android.modelo.NRecuperacion;
 import com.resphere.android.modelo.NUrgente;
 import com.resphere.android.modelo.Nrrhh;
@@ -58,6 +59,7 @@ public class ApplicationDataContext extends ObjectContext {
 	public ObjectSet<Evaluacion> evaluacionDAO;
 	public ObjectSet<Equipo> equipoDAO;
 	public ObjectSet<Respuesta> respuestaDAO;
+	public ObjectSet<Monitoreo> monitoreoDAO;
 	
 	private Context context;
 	
@@ -112,6 +114,8 @@ public class ApplicationDataContext extends ObjectContext {
 			this.equipoDAO = new ObjectSet<Equipo>(Equipo.class, this);
 		if(respuestaDAO == null)
 			this.respuestaDAO = new ObjectSet<Respuesta>(Respuesta.class, this);
+		if(monitoreoDAO == null)
+			this.monitoreoDAO = new ObjectSet<Monitoreo>(Monitoreo.class, this);
 		
 		this.context = pContext;
 	}
@@ -214,6 +218,10 @@ public class ApplicationDataContext extends ObjectContext {
 	
 	public ObjectSet<Respuesta> getRespuestaDAO(){
 		return respuestaDAO;
+	}
+	
+	public ObjectSet<Monitoreo> getMonitoreoDAO(){
+		return monitoreoDAO;
 	}
 	
 	private ApplicationDataContext getApplicationDataContext() {

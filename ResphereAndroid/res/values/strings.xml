@@ -305,5 +305,7 @@
     <string name="NoGuardar">No se ha guardado correctamente</string>
     <string name="NoEnviar">No se ha enviado correctamente</string>
     <string name="title_activity_respuesta_humanitaria_detalle">Respuesta Humanitaria Monitoreo</string>
+    <string name="title_activity_repuesta_humanitaria_detalle">Repuesta Humanitaria Detalle</string>
+    <string name="title_activity_monitoreo_respuesta_lista">Monitoreo Respuesta</string>
 
 </resources>

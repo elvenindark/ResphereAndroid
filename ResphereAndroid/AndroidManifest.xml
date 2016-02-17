@@ -161,6 +161,10 @@
             android:name=".RespuestaHumanitariaDetalleActivity"
             android:label="@string/title_activity_respuesta_humanitaria_detalle" >
         </activity>
+        <activity
+            android:name=".MonitoreoRespuestaLista"
+            android:label="@string/title_activity_monitoreo_respuesta_lista" >
+        </activity>
     </application>
 
 </manifest>

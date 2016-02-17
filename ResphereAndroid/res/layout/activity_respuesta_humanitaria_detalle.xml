@@ -1,11 +1,166 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.resphere.android.vista.RespuestaHumanitariaDetalleActivity" >
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:shrinkColumns="1"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:text="NORMA MÍNIMA"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textIndicador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INDICACIONES"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/txtObservacionR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_span="2"
+                android:text="¿Se alcanzó el objetivo?"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/radioGroupRespuesta"
+                android:layout_span="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="100%" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="75%" />
+
+                <RadioButton
+                    android:id="@+id/radio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50%" />
+
+                <RadioButton
+                    android:id="@+id/radio4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25%" />
+
+                <RadioButton
+                    android:id="@+id/radio5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%" />
+
+            </RadioGroup>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editObservacionRespuesta"
+                android:layout_span="2"
+                android:ems="10"
+                android:hint="Informativo acerca del cumplimiento de la norma"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:singleLine="false" >
+
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnEnviarRespuesta"
+                android:layout_span="1"
+                android:text="Enviar" />
+
+            <Button
+                android:id="@+id/btnGuardarRespuesta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>

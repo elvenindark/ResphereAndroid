@@ -4,14 +4,17 @@ import com.mobandme.ada.Entity;
 import com.mobandme.ada.annotations.Table;
 import com.mobandme.ada.annotations.TableField;
 
-@Table(name="acceso")
+@Table(name="respuesta")
 public class Respuesta extends Entity {
 	@TableField(name ="idrespuesta", datatype = Entity.DATATYPE_INTEGER)
 	private int idrespuesta;
+	//TODO QUITAR IDEVENTO, NO SE REQUIERE
 	@TableField(name ="idevento", datatype = Entity.DATATYPE_STRING)
 	private String idevento;
 	@TableField(name ="idindicadorclave", datatype = Entity.DATATYPE_STRING)
 	private String idindicadorclave;
+	@TableField(name ="indicadorclave", datatype = Entity.DATATYPE_STRING)
+	private String indicadorclave;	
 	@TableField(name ="observacion", datatype = Entity.DATATYPE_STRING)
 	private String observacion;
 	@TableField(name ="idsectorhumanitario", datatype = Entity.DATATYPE_INTEGER)
@@ -45,6 +48,12 @@ public class Respuesta extends Entity {
 	}
 	public void setIdsectorhumanitario(int idsectorhumanitario) {
 		this.idsectorhumanitario = idsectorhumanitario;
+	}
+	public String getIndicadorclave() {
+		return indicadorclave;
+	}
+	public void setIndicadorclave(String indicadorclave) {
+		this.indicadorclave = indicadorclave;
 	}
 	
 }

@@ -8,30 +8,41 @@ import com.mobandme.ada.annotations.Table;
 import com.mobandme.ada.annotations.TableField;
 import com.resphere.android.vista.R;
 
+
+
 @Table(name="evento")
 public class Evento extends Entity {
+	
+	public static int Fecha_Evento = R.id.txtFechaEvento;
 
-	@Databinding(ViewId = R.id.txtFechaEvento)
+	@Databinding(ViewId = 0x7f090050)	
 	@TableField(name ="fecha", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "fecha vacia")
-	private String fecha;
-	@Databinding(ViewId = R.id.txtHoraEvento)
+	private String fecha;	
+	public static int Hora_Evento = R.id.txtHoraEvento;	
+	@Databinding(ViewId = 0x7f090051)
 	@TableField(name ="hora", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "hora vacia")
 	private String hora;
-	@Databinding(ViewId = R.id.editDescEvento)
+	public static int Desc_Evento = R.id.editDescEvento;	
+	public static int Error_empty_name = R.string.error_empty_name;			
+	@Databinding(ViewId = 0x7f090056)
 	@TableField(name ="descripcion", datatype = Entity.DATATYPE_STRING, required = true)
-	@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
+	@RequiredFieldValidation(messageResourceId=0x7f05003b)
 	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres ")
 	private String descripcion;
-	@Databinding(ViewId = R.id.editEfecSecundarios)
+	public static int efectos_secundarios = R.id.editEfecSecundarios;
+	@Databinding(ViewId = 0x7f090057)
 	@TableField(name ="efectos", datatype = Entity.DATATYPE_STRING, required = true)
-	@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
+	//@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
+	@RequiredFieldValidation(messageResourceId=0x7f05003b)
 	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String efectos;
-	@Databinding(ViewId = R.id.editAmenazas)
+	public static int amenazas_evento = R.id.editAmenazas;
+	@Databinding(ViewId = 0x7f090058)
 	@TableField(name ="amenazas", datatype = Entity.DATATYPE_STRING, required = true)
-	@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
+	//@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
+	@RequiredFieldValidation(messageResourceId=0x7f05003b)
 	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
 	private String amenazas;
 	@TableField(name ="idevento", datatype = Entity.DATATYPE_STRING, required = true)
