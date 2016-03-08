@@ -33,16 +33,20 @@
                 android:layout_span="2"
                 android:orientation="horizontal" >
 
-                <RadioButton
-                    android:id="@+id/radio0"
-                    android:checked="true"                    
-                    android:text="SI" />
-
-                <RadioButton
-                    android:id="@+id/radio1"                    
-                    android:text="NO" />
-
                 <requestFocus />
+
+                <RadioButton
+                    android:id="@+id/radSSi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Si" />
+
+                <RadioButton
+                    android:id="@+id/radSNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+
             </RadioGroup>
 
         </TableRow>

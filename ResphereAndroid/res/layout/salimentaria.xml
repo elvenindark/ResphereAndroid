@@ -30,22 +30,33 @@
 
             <RadioGroup
                 android:id="@+id/radioGroupSA"
-                android:layout_span="2"
+                android:layout_span="1"
                 android:orientation="horizontal" >
 
                 <RadioButton
-                    android:id="@+id/radio0"
+                    android:id="@+id/radSaSi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="SI" />
+                    android:text="Si" />
 
                 <RadioButton
-                    android:id="@+id/radio1"
+                    android:id="@+id/radSaNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NO" />
+                    android:text="No" />
+
             </RadioGroup>
+
+            <EditText
+                android:id="@+id/editPorcentajeSA"
+                android:layout_span="1"
+                android:ems="10"
+                android:hint="%"
+                android:inputType="number" >
+
+                <requestFocus />
+            </EditText>
 
         </TableRow>
 
@@ -55,16 +66,10 @@
             android:layout_height="wrap_content" >
 
             <EditText
-                android:id="@+id/editPorcentajeSA"
-                android:layout_span="1"
-                android:ems="10"
-                android:hint="%"
-                android:inputType="number" />
-
-            <EditText
                 android:id="@+id/editObservacionSA"
-                android:layout_span="1"
+                android:layout_weight="2"                
                 android:ems="10"
+                android:hint="Comentario/Observaciones"
                 android:inputType="textMultiLine" />
 
         </TableRow>

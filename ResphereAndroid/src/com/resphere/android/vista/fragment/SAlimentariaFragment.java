@@ -31,6 +31,9 @@ public class SAlimentariaFragment extends DialogFragment{
 	private EditText observacion;
 	private RadioGroup salimentaria;
 	private RadioButton tipo;
+	private RadioButton nivel1;
+	private RadioButton nivel2;
+	
 	private TextView titulo;
 	
 	public SAlimentariaFragment(int position, String msg){
@@ -43,6 +46,23 @@ public class SAlimentariaFragment extends DialogFragment{
 		final View view = inflater.inflate(R.layout.salimentaria, container);
 		
 		getDatosUI(view);
+		
+		salimentaria.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch(checkedId){
+				case R.id.radSaSi:
+					tipo = (RadioButton)view.findViewById(R.id.radSaSi);
+					break;
+				case R.id.radSaNo:
+					tipo = (RadioButton)view.findViewById(R.id.radSaNo);
+					break;
+				}
+			}
+			
+		});
 		
 		guardar.setOnClickListener(new OnClickListener(){
 
@@ -84,7 +104,10 @@ public class SAlimentariaFragment extends DialogFragment{
 		observacion = (EditText)view.findViewById(R.id.editObservacionSA);
 		salimentaria = (RadioGroup)view.findViewById(R.id.radioGroupSA);
 		titulo = (TextView)view.findViewById(R.id.textTituloSA);
+		nivel1 = (RadioButton)view.findViewById(R.id.radSaSi);
+		nivel2 = (RadioButton)view.findViewById(R.id.radSaNo);
 		titulo.setText(msg);		
+		
 		int buttonCheckedId = salimentaria.getCheckedRadioButtonId();
 		if(buttonCheckedId  == -1){
 			if((RadioButton)view.findViewById(salimentaria.getCheckedRadioButtonId()) == null)
@@ -93,5 +116,7 @@ public class SAlimentariaFragment extends DialogFragment{
 			//Toast.makeText(getActivity(), "id: " + buttonCheckedId, Toast.LENGTH_SHORT).show();
 			tipo = (RadioButton)view.findViewById(salimentaria.getCheckedRadioButtonId());
 		}	
+		
+		
 	}
 }

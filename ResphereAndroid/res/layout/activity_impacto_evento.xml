@@ -36,7 +36,7 @@
                 android:padding="5dp" >
 
                 <RadioButton
-                    android:id="@+id/radio0"
+                    android:id="@+id/radNivel1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
@@ -44,21 +44,21 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/radio1"
+                    android:id="@+id/radNivel2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nivel 2. Evento requiere movilizar recursos locales adicionales (parroquiales o cantonales) a los dispuestos para emergencias. El COE parroquial o cantonal está tomando decisiones."
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/radio2"
+                    android:id="@+id/radNivel3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nivel 3. Evento ha superado capacidades locales y requiere apoyo provincial. Se requiere activación del COE provincial y la intervención directa de la SGR a través de la DPGR."
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/radio3"
+                    android:id="@+id/radNivel4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nivel 4. Evento ha superado capacidades provinciales y requiere apoyo nacional. Se requiere activación del COE Nacional y la intervención directa de la SGR."

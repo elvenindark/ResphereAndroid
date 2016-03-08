@@ -49,6 +49,7 @@ public class ComentariosActivity extends Activity {
 		preferencias = new ConfiguracionPreferencias(this);
 		getIU();
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -69,6 +70,7 @@ public class ComentariosActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(item);
 				if(enviarDatos(item))
 					Toast.makeText(getApplicationContext(), "Comentario enviado correctamente", Toast.LENGTH_SHORT).show();
 				else

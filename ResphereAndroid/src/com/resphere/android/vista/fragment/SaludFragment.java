@@ -31,6 +31,9 @@ public class SaludFragment extends DialogFragment{
 	private RadioGroup tipoSalud;	
 	private EditText observaciones;
 	private RadioButton tipo;
+	
+	private RadioButton radSi;
+	private RadioButton radNo;
 	private TextView titulo;
 	
 	public SaludFragment(int position, String msg){
@@ -43,6 +46,23 @@ public class SaludFragment extends DialogFragment{
 		final View view = inflater.inflate(R.layout.salud, container);
 		
 		getDatosUI(view);
+		
+		tipoSalud.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				switch(checkedId){
+				case R.id.radSSi:
+					tipo = (RadioButton)view.findViewById(R.id.radSSi);
+					break;
+				case R.id.radSNo:
+					tipo = (RadioButton)view.findViewById(R.id.radSNo);
+					break;
+				}
+			}
+			
+		});
 		
 		guardar.setOnClickListener(new OnClickListener(){
 
@@ -84,6 +104,8 @@ public class SaludFragment extends DialogFragment{
 		tipoSalud = (RadioGroup)view.findViewById(R.id.radioSalud);
 		titulo = (TextView)view.findViewById(R.id.textTitleSalud);
 		titulo.setText(msg);
+		radSi = (RadioButton)view.findViewById(R.id.radSSi);
+		radNo = (RadioButton)view.findViewById(R.id.radSNo);
 		int buttonCheckedId = tipoSalud.getCheckedRadioButtonId();
 		if(buttonCheckedId  == -1){
 			if((RadioButton)view.findViewById(tipoSalud.getCheckedRadioButtonId()) == null)

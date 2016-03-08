@@ -104,6 +104,7 @@ public class NecesidadesRRHHActivity extends Activity {
 			}			
 		});
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -124,6 +125,7 @@ public class NecesidadesRRHHActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(lista);
 				if(enviarDatos(lista))
 					Toast.makeText(getApplicationContext(), "Se ha enviado necesidades correctamente", Toast.LENGTH_SHORT).show();
 				else

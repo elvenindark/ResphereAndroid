@@ -71,7 +71,7 @@ public class AfectacionSaludActivity extends FragmentActivity implements SAlimen
 		alimentacion = getResources().getStringArray(R.array.alimentacion);
 		guardar = (Button)findViewById(R.id.btnGuardarSalud);
 		enviar = (Button)findViewById(R.id.btnEnviarSalud);
-		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		
 		arraySalud = new Salud[salud.length + alimentacion.length];
 		for(int i = 0; i < arraySalud.length; i++)

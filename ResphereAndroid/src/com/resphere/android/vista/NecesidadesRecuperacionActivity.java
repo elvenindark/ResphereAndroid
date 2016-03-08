@@ -3,6 +3,7 @@ package com.resphere.android.vista;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import com.resphere.android.vista.adapter.CustomListNRecuperacion;
 import com.resphere.android.vista.fragment.NRFragment;
 import com.resphere.android.vista.fragment.NRFragment.NRListener;
 
+@SuppressLint("NewApi")
 public class NecesidadesRecuperacionActivity extends FragmentActivity implements NRListener{
 
 	private String[] necesidadesRecuperacion;
@@ -92,6 +94,7 @@ public class NecesidadesRecuperacionActivity extends FragmentActivity implements
 			}			
 		});
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -113,6 +116,7 @@ public class NecesidadesRecuperacionActivity extends FragmentActivity implements
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(listaNR);
 				if(enviarDatos(listaNR))
 					Toast.makeText(getApplicationContext(), "Necesidades enviadas correctamente", Toast.LENGTH_SHORT).show();
 				else

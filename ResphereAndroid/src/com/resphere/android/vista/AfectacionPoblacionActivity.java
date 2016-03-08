@@ -3,6 +3,7 @@ package com.resphere.android.vista;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -32,6 +33,7 @@ import com.resphere.android.vista.adapter.CustomListPoblacion;
 import com.resphere.android.vista.fragment.PoblacionFragment;
 import com.resphere.android.vista.fragment.PoblacionFragment.PoblacionListener;
 
+@SuppressLint("NewApi")
 public class AfectacionPoblacionActivity extends FragmentActivity implements PoblacionListener{
 
 	private String[] poblacionAfectada;
@@ -135,6 +137,7 @@ public class AfectacionPoblacionActivity extends FragmentActivity implements Pob
 			
 		});
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 	    guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -156,6 +159,7 @@ public class AfectacionPoblacionActivity extends FragmentActivity implements Pob
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(listaPoblacion);
 				if(guardarDatos(listaPoblacion)){
 					if(sendListPoblacion(listaPoblacion)){
 						Toast.makeText(getApplicationContext(), "Poblacion guardada correctamente", Toast.LENGTH_SHORT).show();

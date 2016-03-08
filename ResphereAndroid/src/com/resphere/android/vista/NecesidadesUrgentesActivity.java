@@ -56,6 +56,7 @@ public class NecesidadesUrgentesActivity extends Activity {
 		
 		getIU();
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -76,6 +77,7 @@ public class NecesidadesUrgentesActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(list);
 				if(enviarDatos(list))
 					Toast.makeText(getApplicationContext(), "Necesidades enviadas correctamente", Toast.LENGTH_SHORT).show();
 				else

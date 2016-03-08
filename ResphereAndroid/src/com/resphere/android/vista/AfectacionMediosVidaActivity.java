@@ -13,6 +13,7 @@ import com.resphere.android.vista.adapter.CustomListMediosVida;
 import com.resphere.android.vista.fragment.MediosVidaFragment;
 import com.resphere.android.vista.fragment.MediosVidaFragment.MediosVidaListener;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,6 +29,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+@SuppressLint("NewApi")
 public class AfectacionMediosVidaActivity extends FragmentActivity implements MediosVidaListener{
 	
 	private String[] afectacionMedios;
@@ -96,12 +98,15 @@ public class AfectacionMediosVidaActivity extends FragmentActivity implements Me
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(listMedioVida);
 				setListTask(listMedioVida);
 				Toast.makeText(getApplicationContext(), "MedioVida enviados", Toast.LENGTH_SHORT).show();
 				finish();
 			}
 			
 		});
+		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		
 		guardar.setOnClickListener(new OnClickListener(){
 

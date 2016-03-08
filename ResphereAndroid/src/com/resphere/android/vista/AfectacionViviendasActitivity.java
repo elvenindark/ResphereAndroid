@@ -64,6 +64,7 @@ public class AfectacionViviendasActitivity extends Activity {
 		guardar = (Button)findViewById(R.id.btnGuardarV);
 		enviar = (Button)findViewById(R.id.btnEnviarV);
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -84,6 +85,7 @@ public class AfectacionViviendasActitivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(vivienda);
 				sendTask(vivienda);				
 				Toast.makeText(getApplicationContext(), "Daños en vivienda enviados", Toast.LENGTH_SHORT).show();
 				finish();

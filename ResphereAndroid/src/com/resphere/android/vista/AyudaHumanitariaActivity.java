@@ -2,6 +2,7 @@ package com.resphere.android.vista;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -28,6 +29,7 @@ import com.resphere.android.vista.fragment.OrganizacionFragment;
 import com.resphere.android.vista.fragment.OrganizacionFragment.OrganizacionListener;
 
 
+@SuppressLint("NewApi")
 public class AyudaHumanitariaActivity extends FragmentActivity implements OrganizacionListener, AccionListener{
 	
 	private Button agregarOrg;
@@ -66,6 +68,9 @@ public class AyudaHumanitariaActivity extends FragmentActivity implements Organi
 		listaOrg = new ArrayList<Organizacion>();
 		listaAccion = new ArrayList<Accion>();
 		
+		guardarOrg.setVisibility(android.view.View.INVISIBLE);
+		guardarAccion.setVisibility(android.view.View.INVISIBLE);
+		
 		agregarOrg.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -95,7 +100,7 @@ public class AyudaHumanitariaActivity extends FragmentActivity implements Organi
 					Toast.makeText(getApplicationContext(), "Acciones guardadas correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Error al guardar acciones", Toast.LENGTH_SHORT).show();
-				finish();
+				//finish();
 			}
 			
 		});
@@ -109,7 +114,7 @@ public class AyudaHumanitariaActivity extends FragmentActivity implements Organi
 					Toast.makeText(getApplicationContext(), "Organizaciones guardadas correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Error al guardar organizaciones", Toast.LENGTH_SHORT).show();
-				finish();
+				//finish();
 			}
 			
 		});
@@ -119,11 +124,12 @@ public class AyudaHumanitariaActivity extends FragmentActivity implements Organi
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				guardarOrg(listaOrg);
 				if(enviarOrg(listaOrg))
 					Toast.makeText(getApplicationContext(), "Organizaciones enviadas correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Error al enviar organizaciones", Toast.LENGTH_SHORT).show();
-				finish();
+				//finish();
 			}
 			
 		});
@@ -133,11 +139,12 @@ public class AyudaHumanitariaActivity extends FragmentActivity implements Organi
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				guardarAccion(listaAccion);
 				if(enviarAccion(listaAccion))
 					Toast.makeText(getApplicationContext(), "Acciones enviadas correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Error al enviar acciones", Toast.LENGTH_SHORT).show();
-				finish();
+				//finish();
 			}
 			
 		});

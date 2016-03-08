@@ -2,6 +2,7 @@ package com.resphere.android.vista;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -28,6 +29,7 @@ import com.resphere.android.vista.fragment.EquipoFragment.EquipoListener;
 import com.resphere.android.vista.fragment.FechaPickerFragment;
 import com.resphere.android.vista.fragment.FechaPickerFragment.EditFechaListener;
 
+@SuppressLint("NewApi")
 public class EquipoEvaluacionActivity extends FragmentActivity implements EquipoListener, EntrevistadoListener, EditFechaListener{
 
 	private TextView fecha;
@@ -95,6 +97,8 @@ public class EquipoEvaluacionActivity extends FragmentActivity implements Equipo
 			}			
 		});
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
+		
 		guardar.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -123,14 +127,17 @@ public class EquipoEvaluacionActivity extends FragmentActivity implements Equipo
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getFecha();
+				guardarFecha(eval);
 				if(enviarFecha(eval))
 					Toast.makeText(getApplicationContext(), "Fecha enviada correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Problemas al enviar la fecha", Toast.LENGTH_SHORT).show();
+				guardarEquipo(listEquipo);
 				if(enviarEquipo(listEquipo))
 					Toast.makeText(getApplicationContext(), "Equipo enviado correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Problemas al enviar el equipo", Toast.LENGTH_SHORT).show();
+				guardarEquipo(listEntrevistado);
 				if(enviarEquipo(listEntrevistado))
 					Toast.makeText(getApplicationContext(), "Entrevistados enviados correctamente", Toast.LENGTH_SHORT).show();
 				else

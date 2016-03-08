@@ -42,11 +42,11 @@
                 android:orientation="horizontal" >
 
                 <RadioButton
-                    android:id="@+id/radio0"                    
+                    android:id="@+id/radNivel1"                    
                     android:text="M" />
 
                 <RadioButton
-                    android:id="@+id/radio1"
+                    android:id="@+id/radNivel2"
                     android:text="F" />
             </RadioGroup>
 

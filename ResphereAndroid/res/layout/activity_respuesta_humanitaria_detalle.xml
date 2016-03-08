@@ -92,20 +92,20 @@
                 android:orientation="horizontal" >
 
                 <RadioButton
-                    android:id="@+id/radio0"
+                    android:id="@+id/radNivel1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="100%" />
 
                 <RadioButton
-                    android:id="@+id/radio1"
+                    android:id="@+id/radNivel2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="75%" />
 
                 <RadioButton
-                    android:id="@+id/radio2"
+                    android:id="@+id/radNivel3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="50%" />

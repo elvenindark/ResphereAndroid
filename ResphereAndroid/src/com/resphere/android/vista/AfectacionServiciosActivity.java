@@ -3,6 +3,7 @@ package com.resphere.android.vista;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,6 +29,7 @@ import com.resphere.android.vista.adapter.CustomListServicios;
 import com.resphere.android.vista.fragment.ServiciosFragment;
 import com.resphere.android.vista.fragment.ServiciosFragment.ServiciosListener;
 
+@SuppressLint("NewApi")
 public class AfectacionServiciosActivity extends FragmentActivity implements ServiciosListener {
 	
 	private String[] servicios;
@@ -69,6 +71,8 @@ public class AfectacionServiciosActivity extends FragmentActivity implements Ser
 		final ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, servicios);
 		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		
+		guardar.setVisibility(android.view.View.INVISIBLE);
+		
 		spinnerCustom.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -95,6 +99,7 @@ public class AfectacionServiciosActivity extends FragmentActivity implements Ser
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(listServicios);
 				setListTask(listServicios);
 				Toast.makeText(getApplicationContext(), "Afectacion servicios enviados", Toast.LENGTH_SHORT).show();
 				finish();

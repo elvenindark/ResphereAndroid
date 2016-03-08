@@ -60,15 +60,7 @@ public class AfectacionAccesabilidadActivity extends Activity {
 		guardar = (Button)findViewById(R.id.btnGuardarAcceso);
 		enviar = (Button)findViewById(R.id.btnEnviarAcceso);
 		
-		guardar.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-
-			}
-			
-		});
+		guardar.setVisibility(android.view.View.INVISIBLE);
 		
 		enviar.setOnClickListener(new OnClickListener(){
 
@@ -76,6 +68,8 @@ public class AfectacionAccesabilidadActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				getDatos();
+				guardarDatos(acceso);
+				guardarDatos(listaAcceso);
 				setDataTask(acceso);				
 				setListTask(listaAcceso);
 				Toast.makeText(v.getContext(), "Accesabilidad enviado correctamente", Toast.LENGTH_LONG).show();
