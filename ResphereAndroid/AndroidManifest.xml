@@ -165,6 +165,10 @@
             android:name=".MonitoreoRespuestaLista"
             android:label="@string/title_activity_monitoreo_respuesta_lista" >
         </activity>
+        <activity
+            android:name=".MonitoreoRespuestaDetalle"
+            android:label="@string/title_activity_monitoreo_respuesta_detalle" >
+        </activity>
     </application>
 
 </manifest>

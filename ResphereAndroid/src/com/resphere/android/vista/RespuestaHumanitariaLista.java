@@ -14,6 +14,7 @@ import com.resphere.android.util.ConfiguracionPreferencias;
 import com.resphere.server.model.Respuestabysectorv;
 import com.resphere.service.RespuestabysectorvFacadeREST;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -32,6 +33,7 @@ import android.widget.TextView;
  *	TO-DO Saltar a la siguiente actividad 
  * */
 
+@SuppressLint("NewApi")
 public class RespuestaHumanitariaLista extends FragmentActivity {
 
 	private TextView titulo;

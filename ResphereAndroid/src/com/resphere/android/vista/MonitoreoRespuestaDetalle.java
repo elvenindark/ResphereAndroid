@@ -7,6 +7,8 @@ import com.resphere.server.model.Monitoreorespuesta;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,8 +18,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RespuestaHumanitariaDetalleActivity extends Activity {
-	
+public class MonitoreoRespuestaDetalle extends Activity {
+
 	private String indicador;
 	private int idrespuesta;
 	private TextView txtIndicador;
@@ -40,7 +42,7 @@ public class RespuestaHumanitariaDetalleActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_respuesta_humanitaria_detalle);
+		setContentView(R.layout.activity_monitoreo_respuesta_detalle);
 		Bundle extras = getIntent().getExtras();
 		if(extras!=null){
 			indicador = (String) extras.get("indicador");
@@ -109,4 +111,5 @@ public class RespuestaHumanitariaDetalleActivity extends Activity {
 		}else
 			return false;
 	}
+
 }

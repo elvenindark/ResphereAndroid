@@ -130,7 +130,7 @@ public class MonitoreoRespuestaActivity extends Activity {
 		  .setAdapter(dataAdapter, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {				
-				Intent intent = new Intent(MonitoreoRespuestaActivity.this, RespuestaHumanitariaLista.class);
+				Intent intent = new Intent(MonitoreoRespuestaActivity.this, MonitoreoRespuestaLista.class);
 				intent.putExtra("identificador", respuestas.get(which).getIdevento()); 
 				intent.putExtra("sector", String.valueOf(indice));
 				startActivity(intent);

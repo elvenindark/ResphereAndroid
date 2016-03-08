@@ -118,7 +118,7 @@ public class ComentariosActivity extends Activity {
 	}
 	
 	public void getIU(){
-		comentario = (EditText)findViewById(R.id.editObservacionRespuesta);
+		comentario = (EditText)findViewById(R.id.editObservacionMonitoreo);
 		guardar = (Button)findViewById(R.id.btnGuardarCom);
 		enviar = (Button)findViewById(R.id.btnEnviarCom);
 	}

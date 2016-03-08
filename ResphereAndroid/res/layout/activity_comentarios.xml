@@ -34,7 +34,7 @@
                 >
                
                 <EditText
-                    android:id="@+id/editObservacionRespuesta"
+                    android:id="@+id/editObservacionMonitoreo"
                     android:layout_span="2"
                     android:ems="10"
                     android:hint="observaciones/cuantificar"

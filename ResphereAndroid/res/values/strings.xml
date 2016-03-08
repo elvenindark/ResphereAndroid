@@ -54,8 +54,7 @@
         <item>Trabajos con asociaciones comunitarias</item>
         <item>Trabajo con sueldo regular</item>
         <item>Ayuda de familia/remesa</item>
-        <item>Recibe bono del estado</item>
-        <item>Otras</item>
+        <item>Recibe bono del estado</item>        
     </string-array>
     <string-array name="servicios">
         <item>Establecimientos educativos</item>
@@ -73,8 +72,7 @@
         <item>Bancos</item>
         <item>Centros recreativos</item>
         <item>Iglesias</item>
-        <item>Albergues</item>
-        <item>Otros</item>
+        <item>Albergues</item>        
     </string-array>
     <string-array name="poblacionafectada">
         <item>Poblacion total del area afectada</item>
@@ -93,8 +91,7 @@
         <item>Huérfanos</item>
         <item>Discapacitados</item>
         <item>Personas emocionalmente afectadas</item>
-        <item>Personas que sufrieron alguna violencia</item>
-        <item>Especifique si hay etnia dominante</item>
+        <item>Personas que sufrieron alguna violencia</item>        
     </string-array>
     <string-array name="ayudahumanitaria">
         <item>Organizaciones Socorro</item>
@@ -119,8 +116,7 @@
         <item>Trabajos con asociaciones comunitarias</item>
         <item>Trabajo con sueldo regular</item>
         <item>Ayuda de familia/remesa</item>
-        <item>Recibe bono del estado</item>
-        <item>Otras:</item>
+        <item>Recibe bono del estado</item>        
     </string-array>
     <string-array name="menuprincipal">
         <item>Fecha y tipo de evento</item>
@@ -155,8 +151,7 @@
         <item>Bancos</item>
         <item>Centros recreativos</item>
         <item>Iglesias</item>
-        <item>Albergues</item>
-        <item>Otros:</item>
+        <item>Albergues</item>        
     </string-array>
     <string-array name="menusalud">
         <item>Salud</item>
@@ -173,8 +168,7 @@
         <item>vendaval</item>
         <item>incendio estructural</item>
         <item>sequia</item>
-        <item>colapso estructural</item>
-        <item>otros</item>
+        <item>colapso estructural</item>        
     </string-array>
     <string-array name="menuInicioTitles">
         <item>Evaluación Inicial</item>
@@ -212,8 +206,7 @@
         <item>Transporte público</item>
         <item>Oleoducto/gasoducto</item>
         <item>Saneamiento/alcantarillado</item>
-        <item>Telecomunicaciones</item>
-        <item>Otros:</item>
+        <item>Telecomunicaciones</item>        
     </string-array>
 
     <string name="title_activity_edit_poblacion_impactada">Edit Poblacion Impactada</string>
@@ -307,5 +300,6 @@
     <string name="title_activity_respuesta_humanitaria_detalle">Respuesta Humanitaria Monitoreo</string>
     <string name="title_activity_repuesta_humanitaria_detalle">Repuesta Humanitaria Detalle</string>
     <string name="title_activity_monitoreo_respuesta_lista">Monitoreo Respuesta</string>
+    <string name="title_activity_monitoreo_respuesta_detalle">Monitoreo Respuesta</string>
 
 </resources>

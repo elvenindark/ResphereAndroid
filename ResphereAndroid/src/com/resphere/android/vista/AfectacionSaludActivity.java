@@ -16,6 +16,7 @@ import com.resphere.android.vista.fragment.SAlimentariaFragment.SAlimentariaList
 import com.resphere.android.vista.fragment.SaludFragment;
 import com.resphere.android.vista.fragment.SaludFragment.SaludListener;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -32,6 +33,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+@SuppressLint("NewApi")
 public class AfectacionSaludActivity extends FragmentActivity implements SAlimentariaListener, SaludListener{
 	
 	String[] menuSalud;
@@ -161,6 +163,8 @@ public class AfectacionSaludActivity extends FragmentActivity implements SAlimen
 	
 	public Boolean enviarDatos(ArrayList<Salud> lista){
 		Class clazz;		
+		
+		guardarDatos(lista);
 		
 		ArrayList<ArrayList<String>> listofobjects = new ArrayList<ArrayList<String>>();		
 		ArrayList<String> atributos = new ArrayList<String>();					
