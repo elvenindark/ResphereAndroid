@@ -1,6 +1,7 @@
 package com.resphere.android.vista;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -126,22 +127,34 @@ public class EquipoEvaluacionActivity extends FragmentActivity implements Equipo
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				ArrayList<Equipo> equipos = new ArrayList<Equipo>();
+				equipos.addAll(listEquipo);
+				equipos.addAll(listEntrevistado);
 				getFecha();
-				guardarFecha(eval);
+				guardarFecha(eval);		
+				
 				if(enviarFecha(eval))
 					Toast.makeText(getApplicationContext(), "Fecha enviada correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Problemas al enviar la fecha", Toast.LENGTH_SHORT).show();
 				guardarEquipo(listEquipo);
-				if(enviarEquipo(listEquipo))
+				guardarEquipo(listEntrevistado);
+				
+				if(enviarEquipo(equipos)){					
+					Toast.makeText(getApplicationContext(), "Equipo enviado correctamente", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "Entrevistados enviados correctamente", Toast.LENGTH_SHORT).show();
+				}else
+					Toast.makeText(getApplicationContext(), "Problemas al enviar", Toast.LENGTH_SHORT).show();
+				
+				/*if(enviarEquipo(listEquipo))
 					Toast.makeText(getApplicationContext(), "Equipo enviado correctamente", Toast.LENGTH_SHORT).show();
 				else
 					Toast.makeText(getApplicationContext(), "Problemas al enviar el equipo", Toast.LENGTH_SHORT).show();
-				guardarEquipo(listEntrevistado);
+				
 				if(enviarEquipo(listEntrevistado))
 					Toast.makeText(getApplicationContext(), "Entrevistados enviados correctamente", Toast.LENGTH_SHORT).show();
 				else
-					Toast.makeText(getApplicationContext(), "Problemas al enviar los entrevistados", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "Problemas al enviar los entrevistados", Toast.LENGTH_SHORT).show();*/
 				finish();
 			}			
 		});
@@ -213,7 +226,7 @@ public class EquipoEvaluacionActivity extends FragmentActivity implements Equipo
 	public void getFecha(){
 		eval = new Evaluacion();
 		eval.setIdevento(identificador);
-		eval.setIdevaluacion(String.valueOf(System.currentTimeMillis()/1000));
+		eval.setIdevalucion(String.valueOf(System.currentTimeMillis()/1000));
 		eval.setFecha(fecha.getText().toString());
 	}
 

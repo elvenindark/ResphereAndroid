@@ -170,32 +170,36 @@ public class NecesidadesRRHHActivity extends Activity {
 	
 	public void getDatos(){
 		lista = new ArrayList<Nrrhh>();
-		Nrrhh item = new Nrrhh();
+		
 		if(check0.isChecked()){
+			Nrrhh item = new Nrrhh();
 			item.setAplica("SI");
 			item.setIdevento(identificador);
-			item.setIdtiporrhh(String.valueOf(0));
+			item.setIdtiponrrhh(String.valueOf(0));
 			item.setRequerimiento(text0.getText().toString());
 			lista.add(item);
 		}
 		if(check1.isChecked()){
+			Nrrhh item = new Nrrhh();
 			item.setAplica("SI");
 			item.setIdevento(identificador);
-			item.setIdtiporrhh(String.valueOf(1));
+			item.setIdtiponrrhh(String.valueOf(1));
 			item.setRequerimiento(text1.getText().toString());
 			lista.add(item);
 		}
 		if(check2.isChecked()){
+			Nrrhh item = new Nrrhh();
 			item.setAplica("SI");
 			item.setIdevento(identificador);
-			item.setIdtiporrhh(String.valueOf(2));
+			item.setIdtiponrrhh(String.valueOf(2));
 			item.setRequerimiento(text2.getText().toString());
 			lista.add(item);
 		}
 		if(check3.isChecked()){
+			Nrrhh item = new Nrrhh();
 			item.setAplica("SI");
 			item.setIdevento(identificador);
-			item.setIdtiporrhh(String.valueOf(3));
+			item.setIdtiponrrhh(String.valueOf(3));
 			item.setRequerimiento(text3.getText().toString());
 			lista.add(item);
 		}

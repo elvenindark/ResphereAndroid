@@ -294,10 +294,11 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 		send.setOnClickListener(new OnClickListener(){
 
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) {				
 				if(saveUbicacion()){
 					Toast.makeText(getApplicationContext(), "Registrando información", Toast.LENGTH_SHORT).show();
 					if(ubicacion!=null){
+						Log.d("ubicacion sending: ", ubicacion.getParroquia());
 						if(sendUbicacion(ubicacion))
 							Toast.makeText(getApplicationContext(), "Enviando información", Toast.LENGTH_SHORT).show();
 						else
@@ -331,7 +332,7 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 				ubicacion.setLatitud(latitud.getText().toString());
 				ubicacion.setLongitud(longitud.getText().toString());
 				ubicacion.setAltitud(altitud.getText().toString());
-				Log.d("Provincia: ", ubicacion.getProvincia());
+				Log.d("Provincia: ", ubicacion.getParroquia());
 				ubicacion.bind(UbicacionActivity.this, DataBinder.BINDING_UI_TO_ENTITY);				
 				if(ubicacion.validate(getApplicationContext())){
 					ubicacion.setStatus(Entity.STATUS_NEW);
@@ -396,6 +397,7 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 			if(ubicaciones!=null){	
 				ubicacion = ubicaciones.get(0);
 				ubicaciones.get(0).bind(UbicacionActivity.this);
+				Log.d("ubicacion: ", ubicacion.getParroquia());
 				Toast.makeText(getApplicationContext(), ubicaciones.get(0).getParroquia(), Toast.LENGTH_SHORT).show();
 			}
 			else
@@ -430,6 +432,7 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 		//ubicacion.setAltitud(altitud.getText().toString());
 		ubicacion.setIdubicacion(String.valueOf(System.currentTimeMillis()/1000));
 		ubicacion.setIdevento(identificador);
+		Log.d("ubicacion:", ubicacion.getParroquia());
 		return true;
 		//Toast.makeText(this, ubicacion.getProvincia(), Toast.LENGTH_SHORT).show();
 	}

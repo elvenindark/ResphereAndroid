@@ -124,23 +124,25 @@ public class NecesidadesUrgentesActivity extends Activity {
 	
 	
 	public void getDatos(){
-		list = new ArrayList<NUrgente>();
-		item = new NUrgente();
-		item.setIdevento(identificador);
-		item.setHogar(hogarAlb.getText().toString());
-		item.setEspecificacion(specAlb.getText().toString());
-		item.setIdtiponurgente(String.valueOf(0));
-		list.add(item);
-		item.setHogar(hogarAli.getText().toString());
-		item.setIdevento(identificador);
-		item.setEspecificacion(specAli.getText().toString());
-		item.setIdtiponurgente(String.valueOf(1));
-		list.add(item);
-		item.setHogar(hogarAgua.getText().toString());
-		item.setIdevento(identificador);
-		item.setEspecificacion(specAgua.getText().toString());
-		item.setIdtiponurgente(String.valueOf(2));
-		list.add(item);
+		list = new ArrayList<NUrgente>();		
+		NUrgente item1 = new NUrgente();
+		item1.setIdevento(identificador);
+		item1.setNumero(hogarAlb.getText().toString());
+		item1.setEspecificacion(specAlb.getText().toString());
+		item1.setIdtipourgente(String.valueOf(0));
+		list.add(item1);
+		NUrgente item2 = new NUrgente();
+		item2.setNumero(hogarAli.getText().toString());
+		item2.setIdevento(identificador);
+		item2.setEspecificacion(specAli.getText().toString());
+		item2.setIdtipourgente(String.valueOf(1));
+		list.add(item2);
+		NUrgente item3 = new NUrgente();
+		item3.setNumero(hogarAgua.getText().toString());
+		item3.setIdevento(identificador);
+		item3.setEspecificacion(specAgua.getText().toString());
+		item3.setIdtipourgente(String.valueOf(2));
+		list.add(item3);
 	}
 	
 	public void getIU(){

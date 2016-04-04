@@ -34,7 +34,7 @@ public class OrganizacionFragment extends DialogFragment {
 		View view = inflater.inflate(R.layout.organizacion, container);
 		getDialog().setTitle("Organizacion");
 		organizacion = (EditText)view.findViewById(R.id.editOrganizacion);
-		sector = (EditText)view.findViewById(R.id.editOrganizacion);
+		sector = (EditText)view.findViewById(R.id.editSectorOrg);
 		contacto = (EditText)view.findViewById(R.id.editContacto);
 		guardar = (Button)view.findViewById(R.id.btnGuardarOrgF);
 		cancelar = (Button)view.findViewById(R.id.btnCancelarOrg);

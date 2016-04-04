@@ -29,21 +29,21 @@ public class Evento extends Entity {
 	@Databinding(ViewId = 0x7f090056)
 	@TableField(name ="descripcion", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(messageResourceId=0x7f05003b)
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres ")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—|·ÈÌÛ˙]{5,100}", message = "descripcion formato: 5 a 100 caracteres o caracter invalido")
 	private String descripcion;
 	public static int efectos_secundarios = R.id.editEfecSecundarios;
 	@Databinding(ViewId = 0x7f090057)
 	@TableField(name ="efectos", datatype = Entity.DATATYPE_STRING, required = true)
 	//@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
 	@RequiredFieldValidation(messageResourceId=0x7f05003b)
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—|·ÈÌÛ˙]{5,100}", message = "efectos formato: 5 a 100 caracteres")
 	private String efectos;
 	public static int amenazas_evento = R.id.editAmenazas;
 	@Databinding(ViewId = 0x7f090058)
 	@TableField(name ="amenazas", datatype = Entity.DATATYPE_STRING, required = true)
 	//@RequiredFieldValidation(messageResourceId=R.string.error_empty_name)
 	@RequiredFieldValidation(messageResourceId=0x7f05003b)
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—]{5,100}", message = "Problemas en el formato: 5 a 100 caracteres")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—|·ÈÌÛ˙]{5,100}", message = "amenazas formato: 5 a 100 caracteres o caracter invalido")
 	private String amenazas;
 	@TableField(name ="idevento", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message="identificador vacio")

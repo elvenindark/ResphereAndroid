@@ -15,9 +15,6 @@ public class MedioVida extends Entity {
 	@TableField(name = "idtipodano", datatype = Entity.DATATYPE_STRING)
 	private String idtipodano;
 	
-	@TableField(name = "idtipopoblacion", datatype = Entity.DATATYPE_STRING)
-	private String idtipopoblacion;
-	
 	@TableField(name = "siaplica", datatype = Entity.DATATYPE_STRING)
 	private String siaplica;
 	
@@ -68,14 +65,6 @@ public class MedioVida extends Entity {
 
 	public void setIdtipodano(String idtipodano) {
 		this.idtipodano = idtipodano;
-	}
-
-	public String getIdtipopoblacion() {
-		return idtipopoblacion;
-	}
-
-	public void setIdtipopoblacion(String idtipopoblacion) {
-		this.idtipopoblacion = idtipopoblacion;
 	}
 
 	public String getSiaplica() {

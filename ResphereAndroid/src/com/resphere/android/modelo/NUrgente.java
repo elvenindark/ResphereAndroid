@@ -10,9 +10,9 @@ public class NUrgente extends Entity {
 	@TableField(name ="idevento", datatype = Entity.DATATYPE_STRING)
 	private String idevento;
 	@TableField(name ="idtiponurgente", datatype = Entity.DATATYPE_STRING)
-	private String idtiponurgente;
+	private String idtipourgente;
 	@TableField(name ="hogar", datatype = Entity.DATATYPE_STRING)
-	private String hogar;
+	private String numero;
 	@TableField(name ="especificacion", datatype = Entity.DATATYPE_STRING)
 	private String especificacion;
 	public String getIdevento() {
@@ -20,24 +20,24 @@ public class NUrgente extends Entity {
 	}
 	public void setIdevento(String idevento) {
 		this.idevento = idevento;
-	}
-	public String getIdtiponurgente() {
-		return idtiponurgente;
-	}
-	public void setIdtiponurgente(String idtiponurgente) {
-		this.idtiponurgente = idtiponurgente;
-	}
-	public String getHogar() {
-		return hogar;
-	}
-	public void setHogar(String hogar) {
-		this.hogar = hogar;
-	}
+	}	
 	public String getEspecificacion() {
 		return especificacion;
 	}
 	public void setEspecificacion(String especificacion) {
 		this.especificacion = especificacion;
+	}
+	public String getNumero() {
+		return numero;
+	}
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	public String getIdtipourgente() {
+		return idtipourgente;
+	}
+	public void setIdtipourgente(String idtipourgente) {
+		this.idtipourgente = idtipourgente;
 	}	
 	
 }

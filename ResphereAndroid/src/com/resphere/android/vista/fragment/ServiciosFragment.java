@@ -2,6 +2,7 @@ package com.resphere.android.vista.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,7 +43,7 @@ public class ServiciosFragment extends DialogFragment{
 		observacion = (EditText)view.findViewById(R.id.txtObservacionServicios);
 		tipodanos = (RadioGroup)view.findViewById(R.id.radioGroupServicios);
 		aplica = (CheckBox)view.findViewById(R.id.chksiaplicaservicios);
-		funciona = (CheckBox)view.findViewById(R.id.chksiaplicaservicios);
+		funciona = (CheckBox)view.findViewById(R.id.chksifuncionaservicios);
 		int buttonCheckedId = tipodanos.getCheckedRadioButtonId();
 		if(buttonCheckedId  == -1){
 			if((RadioButton)view.findViewById(tipodanos.getCheckedRadioButtonId()) == null)
@@ -87,11 +88,11 @@ public class ServiciosFragment extends DialogFragment{
 					saplica = "No aplica";
 				
 				if(funciona.isChecked())
-					sfunciona = aplica.getText().toString();
+					sfunciona = funciona.getText().toString();
 				else
 					sfunciona = "No funciona";
 				observaciones = observacion.getText().toString();
-				
+				Log.w("funciona y aplica", sfunciona + ", " + saplica);
 				servicio.setIdtipodano(dano);
 				servicio.setObservacion(observaciones);
 				servicio.setSiaplica(saplica);

@@ -2,6 +2,7 @@ package com.resphere.android.vista.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -45,7 +46,7 @@ public class PoblacionFragment extends DialogFragment {
 		ninos = (EditText)view.findViewById(R.id.editNinos);
 		ninas = (EditText)view.findViewById(R.id.editNinas);
 		personas = (EditText)view.findViewById(R.id.editPersonas);
-		hogares = (EditText)view.findViewById(R.id.editHombres);
+		hogares = (EditText)view.findViewById(R.id.editHogares);
 		
 		if(position > size-1){
 			ninos.setVisibility(view.GONE);
@@ -54,7 +55,21 @@ public class PoblacionFragment extends DialogFragment {
 			ninos.setText("0");
 			ninas.setText("0");
 			personas.setText("0");
-		}
+			Log.w("poblacion fragment: ", String.valueOf(position));
+			//10 mujeres afectadas
+			if(position == 8 || position == 9){
+				hombres.setVisibility(view.INVISIBLE);
+				mujeres.setVisibility(view.INVISIBLE);
+				hombres.setText("0");
+				mujeres.setText("0");
+			}			
+			if(position == 10){
+				hombres.setVisibility(view.INVISIBLE);
+				hombres.setText("0");
+				hogares.setVisibility(view.INVISIBLE);
+				hogares.setText("0");				
+			}
+		}		
 		
 		guardar.setOnClickListener(new OnClickListener(){
 

@@ -3,6 +3,7 @@ package com.resphere.android.vista;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -42,6 +43,7 @@ import com.resphere.android.vista.fragment.EventoListFragment.ListEventoListener
 import com.resphere.android.vista.fragment.FechaPickerFragment;
 import com.resphere.android.vista.fragment.FechaPickerFragment.EditFechaListener;
 
+@SuppressLint("NewApi")
 public class EventoActivity extends FragmentActivity implements EditFechaListener, ListEventoListener, 
 OnSendListener, ValidationListener, AsynRespuesta{
 
@@ -136,7 +138,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 				
 				if(guardarEvento()){
 					if(evento!=null)
-						if(sendEvento(evento)){
+						if(sendEvento(evento)){							
 							Toast.makeText(getApplicationContext(), "Enviando evento", Toast.LENGTH_SHORT).show();
 							if(listaEventos!=null)
 								if(sendListaEventos(listaEventos))
@@ -217,7 +219,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 						dbManager.eventoDAO.add(eventos.get(0));	
 						dbManager.eventoDAO.save();
 						setResult(RESULT_OK);
-						
+						evento = eventos.get(0);
 						tipoEventos = dbManager.tipoEventoDAO.search("tipoevento", false, null, wherePattern, 
 								new String[]{eventos.get(0).getIdevento()}, null, null, null, null, null);				
 						if(tipoEventos!=null)
@@ -380,6 +382,7 @@ OnSendListener, ValidationListener, AsynRespuesta{
 		for(int i = 0; i < lista.length; i ++){
 			listEventos[i] = lista[i];
 		}
+		Log.w("Evento> Lista eventos>", String.valueOf(listEventos.length));
 	}	
 	
 	@Override

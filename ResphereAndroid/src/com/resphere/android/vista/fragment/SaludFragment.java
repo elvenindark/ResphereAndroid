@@ -95,6 +95,7 @@ public class SaludFragment extends DialogFragment{
 		s.setSifunciona(tipo.getText().toString());		
 		s.setObservaciones(observaciones.getText().toString());
 		s.setIdtiposalud(String.valueOf(position));
+		s.setPorcentaje("");
 	}
 	
 	public void getDatosUI(View view){

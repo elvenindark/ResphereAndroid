@@ -8,20 +8,14 @@ import com.mobandme.ada.annotations.TableField;
 public class Nrrhh extends Entity {
 
 	@TableField(name ="idtiponrrhh", datatype = Entity.DATATYPE_STRING)
-	private String idtiporrhh;
+	private String idtiponrrhh;
 	@TableField(name ="idevento", datatype = Entity.DATATYPE_STRING)
 	private String idevento;
 	@TableField(name ="aplica", datatype = Entity.DATATYPE_STRING)
 	private String aplica;
 	@TableField(name ="requerimiento", datatype = Entity.DATATYPE_STRING)
-	private String requerimiento;
+	private String requerimiento;	
 	
-	public String getIdtiporrhh() {
-		return idtiporrhh;
-	}
-	public void setIdtiporrhh(String idtiporrhh) {
-		this.idtiporrhh = idtiporrhh;
-	}
 	public String getIdevento() {
 		return idevento;
 	}
@@ -39,6 +33,12 @@ public class Nrrhh extends Entity {
 	}
 	public void setRequerimiento(String requerimiento) {
 		this.requerimiento = requerimiento;
+	}
+	public String getIdtiponrrhh() {
+		return idtiponrrhh;
+	}
+	public void setIdtiponrrhh(String idtiponrrhh) {
+		this.idtiponrrhh = idtiponrrhh;
 	}	
 	
 }

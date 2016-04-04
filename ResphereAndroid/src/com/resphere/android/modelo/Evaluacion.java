@@ -12,7 +12,7 @@ public class Evaluacion extends Entity {
 	@TableField(name ="fecha", datatype = Entity.DATATYPE_STRING)
 	private String fecha;
 	@TableField(name ="idevaluacion", datatype = Entity.DATATYPE_STRING)
-	private String idevaluacion;
+	private String idevalucion;
 
 	public String getIdevento() {
 		return idevento;
@@ -30,12 +30,13 @@ public class Evaluacion extends Entity {
 		this.fecha = fecha;
 	}
 
-	public String getIdevaluacion() {
-		return idevaluacion;
+	public String getIdevalucion() {
+		return idevalucion;
 	}
 
-	public void setIdevaluacion(String idevaluacion) {
-		this.idevaluacion = idevaluacion;
+	public void setIdevalucion(String idevalucion) {
+		this.idevalucion = idevalucion;
 	}
+	
 	
 }

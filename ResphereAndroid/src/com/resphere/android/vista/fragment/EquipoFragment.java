@@ -2,6 +2,7 @@ package com.resphere.android.vista.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,18 +54,18 @@ public class EquipoFragment extends DialogFragment {
 			getDialog().setTitle("Entrevistados");
 		
 		getIU(view);			
-		
+		e = new Equipo();
 		tipo.setOnCheckedChangeListener(new OnCheckedChangeListener(){
 
 			@Override
 			public void onCheckedChanged(RadioGroup arg0, int arg1) {
 				// TODO Auto-generated method stub
 				checked = (RadioButton)view.findViewById(tipo.getCheckedRadioButtonId());
+				Log.w("equipo tipo", checked.getText().toString());
 			}
 			
-		});
-		
-		
+		});		
+			
 		
 		guardar.setOnClickListener(new OnClickListener(){
 
@@ -99,7 +100,7 @@ public class EquipoFragment extends DialogFragment {
 	}
 
 	public void getDatos(){
-		e = new Equipo();
+		
 		e.setNombre(nombre.getText().toString());
 		if(flag == 0){
 			if(rol.isChecked())
@@ -118,6 +119,7 @@ public class EquipoFragment extends DialogFragment {
 			e.setIdtipopoblacion(String.valueOf(2));
 		e.setTelefono(telefono.getText().toString());
 		e.setOrganizacion(organizacion.getText().toString());
+		Log.w("equipo ", e.getIdroltecnico() + "," +e.getIdtipopoblacion());
 	}
 	
 	public void getIU(View v){

@@ -7,6 +7,7 @@ import com.resphere.server.model.Monitoreorespuesta;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,6 +60,7 @@ public class MonitoreoRespuestaDetalle extends Activity {
 		pref.init(this);
 		ip = pref.getHost();
 		port = pref.getPort();
+		btnGuardarRepuesta.setVisibility(View.GONE);
 		btnEnviarRespuesta.setOnClickListener(new OnClickListener(){
 
 			@Override
@@ -66,6 +68,7 @@ public class MonitoreoRespuestaDetalle extends Activity {
 				// TODO Auto-generated method stub
 				getMonitoreo();
 				if(sendMonitoreo(monitoreo)){
+					Log.d("Monitoreo observacion", monitoreo.getObservacion());
 					Toast.makeText(getApplicationContext(), "Se envió información", Toast.LENGTH_SHORT).show();
 				}else{
 					Toast.makeText(getApplicationContext(), "No se actualizó/registró información", Toast.LENGTH_SHORT).show();
