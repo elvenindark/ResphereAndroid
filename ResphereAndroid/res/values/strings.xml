@@ -173,15 +173,13 @@
     <string-array name="menuInicioTitles">
         <item>Evaluación Inicial</item>
         <item>Revisar informes</item>
-        <item>Respuesta Humanitaria</item>
-        <item>Monitoreo Respuesta</item>
+        <item>Respuesta Humanitaria</item>        
         <item>Configuración</item>
     </string-array>
     <string-array name="menuInicioSubtitles">
         <item>Nuevo informe de evaluación inicial</item>
         <item>Revisar informes de evaluación</item>
-        <item>Indicadores normas mínimas respuesta humanitaria</item>
-        <item>Monitoreo indicadores respuesta humanitaria</item>
+        <item>Indicadores normas mínimas respuesta humanitaria</item>        
         <item>Datos de conexión, configuración inicial</item>
     </string-array>
     <string-array name="nivelImpacto">

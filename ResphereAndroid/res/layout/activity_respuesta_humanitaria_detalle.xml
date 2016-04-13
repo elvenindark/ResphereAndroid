@@ -73,7 +73,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textRegistro"
                 android:layout_span="2"
                 android:text="¿Se alcanzó el objetivo?"
                 android:textAppearance="?android:attr/textAppearanceLarge" />

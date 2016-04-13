@@ -37,6 +37,7 @@
         android:layout_height="match_parent" >
 
         <LinearLayout
+            android:id="@+id/btnConfiguracion"
             style="@style/LoginFormContainer"
             android:orientation="vertical" >
 
@@ -44,8 +45,15 @@
                 android:id="@+id/imageView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2.69"
+                android:layout_weight="2.58"
                 android:src="@drawable/esfera" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.58"
+                android:text="Revise la direccion IP y puerto del servidor Liferay con el boton Configuracion" />
 
             <EditText
                 android:id="@+id/email"
@@ -76,6 +84,22 @@
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"
                 android:text="Entrar" />
+
+            <Button
+                android:id="@+id/btnConfiguracion1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.69"
+                android:text="Configuracion" />
+
+            <TextView
+                android:id="@+id/textRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.58"
+                android:text="Registrarse"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
         </LinearLayout>
 

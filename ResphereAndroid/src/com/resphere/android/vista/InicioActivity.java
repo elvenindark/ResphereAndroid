@@ -89,18 +89,8 @@ public class InicioActivity extends Activity {
                     		else{
                     			Toast.makeText(view.getContext(), "Configure la configuracion inicial", Toast.LENGTH_SHORT).show();
                     		}
-                     		break;
+                     		break;                    	
                     	case 3:
-                    		if(preferencias.isDBPref()){                    			
-                    			preferencias.setEventoPref("actual");
-	                    		Intent intent1 = new Intent(InicioActivity.this, MonitoreoRespuestaActivity.class);	                     	             		 
-	                     		startActivity(intent1);
-                     		}
-                    		else{
-                    			Toast.makeText(view.getContext(), "Configure la configuracion inicial", Toast.LENGTH_SHORT).show();
-                    		}
-                     		break;
-                    	case 4:
                     		identificador = String.valueOf(System.currentTimeMillis()/1000);
                     		preferencias.setEventoPref("nuevo");
                     		Intent intent4 = new Intent(InicioActivity.this, ConfiguracionActivity.class);

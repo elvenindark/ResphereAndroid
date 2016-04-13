@@ -31,7 +31,7 @@ public class Ubicacion extends Entity{
 	@Databinding(ViewId =  0x7f0900a0)
 	@TableField(name ="sector", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Sector requerido")
-	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—|·ÈÌÛ˙]{5,100}", message = "Sector formato: 5 a 100 caracteres o caracter")
+	@RegularExpressionValidation(expression = "[a-z|0-9|A-Z| |,|.|Ò—|·ÈÌÛ˙]{3,100}", message = "Sector formato: 5 a 100 caracteres o caracter")
 	private String sector;
 	public static int txt_distancia = R.id.txtDistancia;
 	@Databinding(ViewId = 0x7f0900a2)
@@ -55,18 +55,18 @@ public class Ubicacion extends Entity{
 	@Databinding(ViewId = 0x7f0900a5)
 	@TableField(name ="latitud", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Latitud requerida")
-	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{3,12}", message = "Problemas en el formato latitud: 3 a 12 numeros")
+	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{1,30}", message = "Problemas en el formato latitud: 1 a 30 numeros")
 	private String latitud;
 	public static int txt_longitud = R.id.txtLongitud;
 	@Databinding(ViewId = 0x7f0900a8)
 	@TableField(name ="longitud", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "Longitud requerida")
-	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{3,12}", message = "Problemas en el formato longitud: 3 a 12 numeros")
+	//@RegularExpressionValidation(expression = "[0-9|.|-|0-9]{1,30}", message = "Problemas en el formato longitud: 1 a 30 numeros")
 	private String longitud;
 	public static int txt_altitud = R.id.txtAltitud;
 	@TableField(name ="altitud", datatype = Entity.DATATYPE_STRING)
 	@Databinding(ViewId = 0x7f0900a9)	
-	@RegularExpressionValidation(expression = "[0-9|.|0-9]{1,10}", message = "altitud formato : 1 a 10 numeros")
+	@RegularExpressionValidation(expression = "[0-9|.|0-9]{1,20}", message = "altitud formato : 1 a 10 numeros")
 	private String altitud;
 	@TableField(name = "idevento", datatype = Entity.DATATYPE_STRING, required = true)
 	@RequiredFieldValidation(message = "identificador requerido")

@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import com.liferay.mobile.android.service.Session;
 import com.liferay.mobile.android.v62.group.GroupService;
+import com.resphere.android.util.ConfiguracionPreferencias;
 import com.resphere.android.util.Preferencias;
 
 import android.animation.Animator;
@@ -15,6 +16,8 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +27,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,8 +64,13 @@ public class LoginActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
+	private Button btnConfiguracion;
 	
 	private Preferencias preferencias;
+
+	private ConfiguracionPreferencias pref;
+
+	private TextView text;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,20 +79,31 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 		
 		preferencias = new Preferencias();
+		pref = new ConfiguracionPreferencias(this);
 		preferencias.init(getBaseContext());
-		if(Preferencias.getFirstUse()){
-			Toast.makeText(getApplicationContext(), "Preparando para usar por primera vez", Toast.LENGTH_LONG).show();
-			
-			Intent intent = new Intent(LoginActivity.this, ConfiguracionActivity.class);	 		
-			startActivity(intent);
-		}
+		Log.i("Login", String.valueOf(pref.isIpPortPref()));
+		text = (TextView)findViewById(R.id.textRegistro);
+		Paint p = new Paint();
+	    p.setColor(Color.GREEN);
+	    text.setPaintFlags(p.getColor());
+	    text.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
+	    text.setText("Click para Registrarse");
+		//if(Preferencias.getFirstUse()){
+			if(!pref.isIpPortPref()){
+				Toast.makeText(getApplicationContext(), "Preparando para usar por primera vez", Toast.LENGTH_LONG).show();
+				
+				Intent intent = new Intent(LoginActivity.this, ConfiguracionActivity.class);	 		
+				startActivity(intent);
+			}
+		//}
 
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
 		mEmailView.setText(mEmail);
-
 		mPasswordView = (EditText) findViewById(R.id.password);
+		btnConfiguracion = (Button)findViewById(R.id.btnConfiguracion1);
+		
 		mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 					@Override
 					public boolean onEditorAction(TextView textView, int id,
@@ -107,16 +127,38 @@ public class LoginActivity extends Activity {
 						attemptLogin(getBaseContext());
 					}
 				});
+		
+		btnConfiguracion.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent14 = new Intent(LoginActivity.this, ConfiguracionActivity.class);            		
+         		startActivity(intent14);
+			}
+		});
+		
+		text.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(LoginActivity.this, TestActivity.class);            		
+         		startActivity(intent);
+			}
+		});
 	}
 	
 	@Override
 	public void onResume(){
 		super.onResume();
-		if(Preferencias.getFirstUse()){
-			Toast.makeText(getApplicationContext(), "Preparando para usar por primera vez", Toast.LENGTH_LONG).show();
-			Intent intent = new Intent(LoginActivity.this, ConfiguracionActivity.class);	 		
-			startActivity(intent);
-		}		
+		//if(Preferencias.getFirstUse()){
+			if(!pref.isIpPortPref()){
+				Toast.makeText(getApplicationContext(), "Preparando para usar por primera vez", Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(LoginActivity.this, ConfiguracionActivity.class);	 		
+				startActivity(intent);
+			}
+		//}		
 	}
 
 	@Override
@@ -252,15 +294,16 @@ public class LoginActivity extends Activity {
 			mPasswordView.setText(DUMMY_CREDENTIALS[1]);
 		}
 		
-		public Boolean getLogin(Context context){
-						
+		public Boolean getLogin(Context context){			
 			if(preferencias.getHost()!=null){
-				String server = "http://" + preferencias.getServer() + ":" + "8000";
+				String server = "http://" + preferencias.getHost() + ":" + "8000";
 				preferencias.setServer(server);
 				preferencias.setLogin(mEmailView.getText().toString());
 				preferencias.setPassword(mPasswordView.getText().toString());
 				Session session = Preferencias.getSession();
+				Log.i("Login",server);
 				if(session!=null&&!session.getUsername().equals("")){
+					Log.i("session", session.getUsername());
 					try {
 						Long groupid = getGuestGroupId(session);
 						Log.d("group id", String.valueOf(groupid));

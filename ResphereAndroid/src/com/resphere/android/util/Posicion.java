@@ -23,4 +23,11 @@ public class Posicion {
 	}
 	private String Longitud;
 	private String Altitud;
+	@Override
+	public String toString() {
+		return "Posicion [Latitud=" + Latitud + ", Longitud=" + Longitud
+				+ ", Altitud=" + Altitud + "]";
+	}
+	
+	
 }

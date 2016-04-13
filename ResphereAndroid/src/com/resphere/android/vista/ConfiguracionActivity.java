@@ -50,7 +50,7 @@ public class ConfiguracionActivity extends Activity {
         	Log.d("ubicacion", "cargando ubicaciones on create");
         	loadUbicacion(getBaseContext());
         }else{
-        	Log.d("ubicacion", "ubicacion getted");
+        	Log.d("ubicacion", "ubicaciones obtenidas");
         }
         
         ip = (EditText)findViewById(R.id.editIP);

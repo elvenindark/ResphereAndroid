@@ -72,7 +72,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textRegistro"
                     android:layout_span="1"
                     android:gravity="center"
                     android:text="Entrevistados"

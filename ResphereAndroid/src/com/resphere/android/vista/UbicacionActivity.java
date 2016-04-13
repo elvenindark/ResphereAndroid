@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Locale;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -364,6 +366,9 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 					ubicaciones.get(0).bind(UbicacionActivity.this, DataBinder.BINDING_UI_TO_ENTITY);
 					if(ubicaciones.get(0).validate(getApplicationContext())){
 						ubicacion = ubicaciones.get(0);
+						ubicacion.setProvincia((String) spProvincia.getSelectedItem());
+						ubicacion.setCanton((String) spCanton.getSelectedItem());
+						ubicacion.setParroquia((String) spParroquia.getSelectedItem());
 						ubicaciones.get(0).setStatus(Entity.STATUS_UPDATED);
 						dbManager.ubicacionDAO.add(ubicaciones.get(0));
 						dbManager.ubicacionDAO.save();
@@ -510,7 +515,13 @@ public class UbicacionActivity extends LayoutActivity implements OnClickListener
 			if(getDatos())	
 				validator.validate();				
 		}
-		if(arg0 == gps){			
+		if(arg0 == gps){	
+			final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+
+			if (!manager.isProviderEnabled( LocationManager.GPS_PROVIDER ) ) { 
+			    //GPS is not enabled !!
+				startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+			} 
 			GPSTask gpst = new GPSTask(this);
 			gpst.execute();
 			gpst.response = this;
